@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "services": "Services",
+    "aircraft": "Fleet",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "titleWords": ["Shaping", "the Future", "of Aviation."],
+    "subtitle": "Ground handling, cargo, general aviation, and premium solutions across 4 countries and 60+ airports worldwide."
+  },
+  "services": {
+    "label": "Services",
+    "title": "What We Do",
+    "subtitle": "Flawless solutions at every point of aviation.",
+    "groundHandling": {
+      "title": "Ground Handling",
+      "desc": "Aircraft marshalling, baggage, passenger services, and flight operations support."
+    },
+    "cargo": {
+      "title": "Cargo",
+      "desc": "Fast and secure cargo solutions with our global network."
+    },
+    "generalAviation": {
+      "title": "General Aviation",
+      "desc": "Comprehensive FBO services for private and business aviation."
+    },
+    "executiveLounge": {
+      "title": "VIP Lounge",
+      "desc": "Premium VIP lounges and maintenance services at world's finest airports."
+    }
+  },
+  "about": {
+    "label": "About Us",
+    "titleWords": ["From Vision", "to Execution."],
+    "desc": "Celebi Aviation leads the industry with world-class service standards at the heart of aviation.",
+    "stats": {
+      "founded": "Founded",
+      "airports": "Airports",
+      "employees": "Employees",
+      "countries": "Countries"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "hq": "Headquarters",
+    "hqValue": "Istanbul, Turkey",
+    "email": "Email",
+    "phone": "Phone",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send",
+      "sending": "Sending...",
+      "success": "Your message has been sent! We will get back to you shortly.",
+      "error": "An error occurred. Please try again.",
+      "errors": {
+        "nameRequired": "Full Name is required",
+        "emailInvalid": "Please enter a valid email",
+        "subjectRequired": "Subject is required",
+        "messageMin": "Message must be at least 10 characters"
+      }
+    },
+    "legal": "All rights reserved",
+    "terms": "Terms of Use",
+    "privacy": "Privacy",
+    "press": "Press"
+  }
+}

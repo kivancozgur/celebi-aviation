@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "services": "Hizmetler",
+    "aircraft": "Uçak Filosu",
+    "about": "Hakkında",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "titleWords": ["Havacılığın", "Geleceğini", "Taşıyoruz."],
+    "subtitle": "Dünya genelinde 4 ülkede, 60+ havalimanında yer hizmetleri, kargo, genel havacılık ve premium çözümler."
+  },
+  "services": {
+    "label": "Hizmetler",
+    "title": "Ne Yapıyoruz",
+    "subtitle": "Havacılığın her noktasında kusursuz çözümler sunuyoruz.",
+    "groundHandling": {
+      "title": "Yer Hizmetleri",
+      "desc": "Uçak yönlendirme, bagaj, yolcu hizmetleri ve uçuş operasyonları desteği."
+    },
+    "cargo": {
+      "title": "Kargo",
+      "desc": "Küresel ağımızla hızlı ve güvenli kargo çözümleri sunuyoruz."
+    },
+    "generalAviation": {
+      "title": "Genel Havacılık",
+      "desc": "Özel uçak ve iş havacılığı için kapsamlı FBO hizmetleri."
+    },
+    "executiveLounge": {
+      "title": "VIP Lounge",
+      "desc": "Dünyanın seçkin havalimanlarında premium VIP salonları ve onarım hizmetleri."
+    }
+  },
+  "about": {
+    "label": "Hakkımızda",
+    "titleWords": ["Vizyondan", "Uygulamaya."],
+    "desc": "Çelebi Havacılık, havacılığın kalbinde dünya standartlarında hizmet anlayışıyla sektöre yön veriyor.",
+    "stats": {
+      "founded": "Kuruluş Yılı",
+      "airports": "Havalimanı",
+      "employees": "Çalışan",
+      "countries": "Ülke"
+    }
+  },
+  "contact": {
+    "label": "İletişim",
+    "hq": "Genel Merkez",
+    "hqValue": "İstanbul, Türkiye",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "form": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "submit": "Gönder",
+      "sending": "Gönderiliyor...",
+      "success": "Mesajınız iletildi! En kısa sürede dönüş yapacağız.",
+      "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+      "errors": {
+        "nameRequired": "Ad Soyad zorunludur",
+        "emailInvalid": "Geçerli bir e-posta girin",
+        "subjectRequired": "Konu zorunludur",
+        "messageMin": "Mesaj en az 10 karakter olmalıdır"
+      }
+    },
+    "legal": "Tüm hakları saklıdır",
+    "terms": "Kullanım Koşulları",
+    "privacy": "Gizlilik",
+    "press": "Basın"
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "country": "Türkiye",
+    "code": "TR",
+    "stats": [
+      { "value": 32, "suffix": "", "label": "İstasyon" },
+      { "value": 31760, "suffix": "", "label": "Uçuş" },
+      { "value": 25229, "suffix": "", "label": "Ton Kargo" },
+      { "value": 910, "suffix": "", "label": "Personel" }
+    ]
+  },
+  {
+    "country": "Hindistan",
+    "code": "IN",
+    "stats": [
+      { "value": 8, "suffix": "", "label": "İstasyon" },
+      { "value": 12400, "suffix": "", "label": "Uçuş" },
+      { "value": 8500, "suffix": "", "label": "Ton Kargo" },
+      { "value": 420, "suffix": "", "label": "Personel" }
+    ]
+  },
+  {
+    "country": "Almanya",
+    "code": "DE",
+    "stats": [
+      { "value": 4, "suffix": "", "label": "İstasyon" },
+      { "value": 5200, "suffix": "", "label": "Uçuş" },
+      { "value": 3100, "suffix": "", "label": "Ton Kargo" },
+      { "value": 180, "suffix": "", "label": "Personel" }
+    ]
+  },
+  {
+    "country": "Macaristan",
+    "code": "HU",
+    "stats": [
+      { "value": 2, "suffix": "", "label": "İstasyon" },
+      { "value": 2800, "suffix": "", "label": "Uçuş" },
+      { "value": 1400, "suffix": "", "label": "Ton Kargo" },
+      { "value": 95, "suffix": "", "label": "Personel" }
+    ]
+  }
+]

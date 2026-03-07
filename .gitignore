@@ -1,0 +1,25 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node
+node_modules
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Mac
+.DS_Store
+
+# Editor
+.vscode
+.idea

@@ -2,7 +2,6 @@
   <main class="bg-white min-h-screen font-inter">
     <AppNav @menu="menuOpen = !menuOpen" />
     <SectionHero />
-    <SectionServices />
     <SectionStats />
     <SectionAbout />
     <SectionAircraft />

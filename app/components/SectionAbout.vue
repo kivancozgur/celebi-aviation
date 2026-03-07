@@ -92,8 +92,8 @@ const aboutLineRef = ref<HTMLElement>()
 const dividerRef = ref<HTMLElement>()
 const statsRowRef = ref<HTMLElement>()
 
-const { tm, t } = useI18n()
-const aboutTitleWords = computed(() => tm('about.titleWords') as string[])
+const { tm, t, rt } = useI18n()
+const aboutTitleWords = computed(() => (tm('about.titleWords') as string[]).map(w => rt(w)))
 const aboutWordRefs: HTMLElement[] = []
 const statRefs: Record<string, HTMLElement> = {}
 
@@ -109,7 +109,7 @@ const stats = computed(() => [
   { label: t('about.stats.founded'), display: '1958', end: 1958, from: 1940, accent: false, suffix: '' },
   { label: t('about.stats.airports'), display: '60+', end: 60, from: 0, accent: true, suffix: '+' },
   { label: t('about.stats.employees'), display: '10K+', end: 10, from: 0, accent: false, suffix: 'K+' },
-  { label: t('about.stats.countries'), display: '4', end: 4, from: 0, accent: true, suffix: '' },
+  { label: t('about.stats.countries'), display: '6', end: 6, from: 0, accent: true, suffix: '' },
 ])
 
 onMounted(() => {

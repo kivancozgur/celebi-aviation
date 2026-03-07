@@ -9,7 +9,7 @@
   },
   "hero": {
     "titleWords": ["Shaping", "the Future", "of Aviation."],
-    "subtitle": "Ground handling, cargo, general aviation, and premium solutions across 4 countries and 60+ airports worldwide."
+    "subtitle": "Ground handling, cargo, general aviation, and premium solutions across 6 countries and 60+ airports worldwide."
   },
   "services": {
     "label": "Services",
@@ -85,7 +85,9 @@
   },
   "statsSection": {
     "label": "Celebi in Numbers",
-    "title": "Global Impact"
+    "title": "Global Impact",
+    "cities": "Cities",
+    "airports": "Airports"
   },
   "footer": {
     "tagline": "Leader in global aviation services worldwide.",

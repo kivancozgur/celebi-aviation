@@ -56,7 +56,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { defineComponent, h, computed } from 'vue'
 
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 
 // ── Icon components ────────────────────────────────────────────────────────────
 
@@ -113,7 +113,7 @@ const icons = [IconIK, IconAkademi, IconPozisyon]
 
 const features = computed(() => {
   const items = tm('careers.features') as Array<{ title: string; desc: string }>
-  return items.map((item, i) => ({ ...item, icon: icons[i] }))
+  return items.map((item, i) => ({ title: rt(item.title), desc: rt(item.desc), icon: icons[i] }))
 })
 
 // ── Refs ──────────────────────────────────────────────────────────────────────

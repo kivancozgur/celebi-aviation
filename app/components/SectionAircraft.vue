@@ -1,58 +1,63 @@
 <template>
   <!-- Pinned scroll storytelling section -->
-  <section ref="outerRef" class="relative bg-dark">
+  <section ref="outerRef" class="relative bg-white">
     <div ref="stickyRef" class="relative h-screen overflow-hidden">
       <!-- Background image with scale parallax -->
       <div ref="imgWrapRef" class="absolute inset-0 will-change-transform">
         <img
-          src="https://images.unsplash.com/photo-1673209034091-fa720e36e327?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=85"
+          src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=1920&q=85"
           alt="Starbase aircraft"
           class="w-full h-full object-cover"
         />
       </div>
 
-      <!-- Cinematic overlay -->
+      <!-- Overlay: sol taraf güçlü (metin orada), sağ taraf açık kalır -->
       <div
-        class="absolute inset-0 bg-gradient-to-r from-dark via-dark/60 to-dark/20"
+        class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"
       />
       <div
-        class="absolute inset-0 bg-gradient-to-b from-dark/80 via-transparent to-dark/80"
+        class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/20"
       />
 
       <!-- Text content -->
       <div
         ref="textRef"
-        class="absolute left-20 top-1/2 -translate-y-1/2 max-w-lg opacity-0"
+        class="absolute left-12 md:left-20 top-1/2 -translate-y-1/2 max-w-xl opacity-0"
       >
-        <span
-          class="text-brand text-[11px] font-medium tracking-[3px] uppercase block mb-4"
-          ref="aircraftLabelRef"
-        >
-          GSAP ILE INTERAKTIF DENEYIM
-        </span>
+        <!-- Label -->
+        <div class="flex items-center gap-3 mb-7">
+          <span class="h-px w-10 bg-white/40 shrink-0" />
+          <span class="text-white/70 text-[11px] font-medium tracking-[4px] uppercase">
+            Küresel Operasyonlar
+          </span>
+        </div>
 
+        <!-- Title -->
         <h2
           ref="aircraftTitleRef"
-          class="text-[clamp(2rem,5vw,3.5rem)] font-semibold text-white leading-tight mb-4"
+          class="text-[clamp(2.4rem,5.5vw,4.2rem)] font-bold text-white leading-[1.08] tracking-[-1.5px] mb-6"
         >
-          Scroll ile<br />
-          <span class="text-brand">Ucak Animasyonu</span>
+          Her Havalimanında<br />
+          <span class="text-sky-300">Fark Yaratıyoruz.</span>
         </h2>
 
-        <p class="text-white/50 text-base leading-relaxed mb-8">
-          Sayfayi asagi kaydirdikca kamera acar, ucak modeli hareket eder<br />
-          ve sahne olusur. Her detay titizlikle tasarlandi.
+        <!-- Description -->
+        <p class="text-white/65 text-[15px] leading-[1.85] mb-10 max-w-sm">
+          1958'den bu yana 6 ülkede faaliyet gösteren Çelebi Havacılık; yer hizmetleri, kargo, genel havacılık ve VIP lounge çözümleriyle dünya standartlarını belirliyor.
         </p>
 
-        <!-- Animated stat badges -->
-        <div class="flex items-center gap-6">
+        <!-- Separator -->
+        <div class="h-px w-16 bg-white/20 mb-8" />
+
+        <!-- Stat badges -->
+        <div class="flex items-start gap-10">
           <div
             v-for="badge in badges"
             :key="badge.label"
             class="badge opacity-0 translate-y-6"
           >
-            <div class="text-2xl font-bold text-white mb-1">{{ badge.value }}</div>
-            <div class="text-white/40 text-xs tracking-[1px] uppercase">{{ badge.label }}</div>
+            <div class="text-[2rem] font-bold text-white leading-none mb-1 tracking-[-1px]">{{ badge.value }}</div>
+            <div class="text-white/45 text-[10px] tracking-[2px] uppercase">{{ badge.label }}</div>
           </div>
         </div>
       </div>
@@ -71,10 +76,10 @@
         ref="scrollCueRef"
         class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-0"
       >
-        <div class="w-px h-16 bg-white/20 relative overflow-hidden">
+        <div class="w-px h-16 bg-gray-400/50 relative overflow-hidden">
           <div ref="cueLineRef" class="absolute top-0 left-0 w-full h-1/2 bg-brand" />
         </div>
-        <span class="text-white/30 text-[10px] tracking-[2px]">DEVAM ET</span>
+        <span class="text-white/40 text-[10px] tracking-[2px]">SCROLL</span>
       </div>
     </div>
   </section>
@@ -93,9 +98,9 @@ const scrollCueRef = ref<HTMLElement>()
 const cueLineRef = ref<HTMLElement>()
 
 const badges = [
-  { value: '60+', label: 'Havalimani' },
-  { value: '4', label: 'Ulke' },
-  { value: '10K+', label: 'Calisan' },
+  { value: '60+', label: 'Havalimanı' },
+  { value: '6', label: 'Ülke' },
+  { value: '10K+', label: 'Çalışan' },
 ]
 
 onMounted(() => {

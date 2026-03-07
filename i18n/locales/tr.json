@@ -9,7 +9,7 @@
   },
   "hero": {
     "titleWords": ["Havacılığın", "Geleceğini", "Taşıyoruz."],
-    "subtitle": "Dünya genelinde 4 ülkede, 60+ havalimanında yer hizmetleri, kargo, genel havacılık ve premium çözümler."
+    "subtitle": "Dünya genelinde 6 ülkede, 60+ havalimanında yer hizmetleri, kargo, genel havacılık ve premium çözümler."
   },
   "services": {
     "label": "Hizmetler",
@@ -85,7 +85,9 @@
   },
   "statsSection": {
     "label": "Rakamlarla Çelebi",
-    "title": "Küresel Etki"
+    "title": "Küresel Etki",
+    "cities": "Şehirler",
+    "airports": "Havalimanları"
   },
   "footer": {
     "tagline": "Dünya genelinde havacılık hizmetlerinde lider.",

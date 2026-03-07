@@ -58,9 +58,13 @@
 </template>
 
 <script setup lang="ts">
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 
-const footerColumns = computed(() =>
-  tm('footer.columns') as Array<{ title: string; links: Array<{ label: string; href: string }> }>
-)
+const footerColumns = computed(() => {
+  const cols = tm('footer.columns') as Array<{ title: string; links: Array<{ label: string; href: string }> }>
+  return cols.map(col => ({
+    title: rt(col.title),
+    links: col.links.map(link => ({ label: rt(link.label), href: rt(link.href) })),
+  }))
+})
 </script>

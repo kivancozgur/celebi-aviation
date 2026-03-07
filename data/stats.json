@@ -1,42 +1,95 @@
 [
   {
     "country": "Türkiye",
+    "countryEn": "Turkey",
     "code": "TR",
+    "flag": "🇹🇷",
+    "cities": ["İstanbul", "Ankara", "İzmir", "Antalya", "Adana", "Trabzon"],
+    "airports": ["İstanbul Havalimanı (IST)", "Sabiha Gökçen (SAW)", "Esenboğa (ESB)", "Adnan Menderes (ADB)", "Antalya (AYT)", "Trabzon (TZX)"],
+    "mapX": "54.5",
+    "mapY": "37.5",
     "stats": [
-      { "value": 32, "suffix": "", "label": "İstasyon" },
-      { "value": 31760, "suffix": "", "label": "Uçuş" },
-      { "value": 25229, "suffix": "", "label": "Ton Kargo" },
-      { "value": 910, "suffix": "", "label": "Personel" }
+      { "value": 32, "suffix": "", "label": "İstasyon", "labelEn": "Stations" },
+      { "value": 126777, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
+      { "value": 100706, "suffix": "", "label": "Ton Kargo", "labelEn": "Tons Cargo" },
+      { "value": 3634, "suffix": "", "label": "Personel", "labelEn": "Personnel" }
     ]
   },
   {
     "country": "Hindistan",
+    "countryEn": "India",
     "code": "IN",
+    "flag": "🇮🇳",
+    "cities": ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Kolkata"],
+    "airports": ["Chhatrapati Shivaji (BOM)", "Indira Gandhi (DEL)", "Kempegowda (BLR)", "Rajiv Gandhi (HYD)"],
+    "mapX": "70.5",
+    "mapY": "47.0",
     "stats": [
-      { "value": 8, "suffix": "", "label": "İstasyon" },
-      { "value": 12400, "suffix": "", "label": "Uçuş" },
-      { "value": 8500, "suffix": "", "label": "Ton Kargo" },
-      { "value": 420, "suffix": "", "label": "Personel" }
+      { "value": 8, "suffix": "", "label": "İstasyon", "labelEn": "Stations" },
+      { "value": 58000, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
+      { "value": 540000, "suffix": "", "label": "Ton Kargo", "labelEn": "Tons Cargo" },
+      { "value": 7800, "suffix": "", "label": "Personel", "labelEn": "Personnel" }
     ]
   },
   {
     "country": "Almanya",
+    "countryEn": "Germany",
     "code": "DE",
+    "flag": "🇩🇪",
+    "cities": ["Frankfurt", "Münih", "Berlin", "Hamburg"],
+    "airports": ["Frankfurt (FRA)", "Münih Franz Josef Strauss (MUC)", "Berlin Brandenburg (BER)", "Hamburg (HAM)"],
+    "mapX": "48.5",
+    "mapY": "31.5",
     "stats": [
-      { "value": 4, "suffix": "", "label": "İstasyon" },
-      { "value": 5200, "suffix": "", "label": "Uçuş" },
-      { "value": 3100, "suffix": "", "label": "Ton Kargo" },
-      { "value": 180, "suffix": "", "label": "Personel" }
+      { "value": 1, "suffix": "", "label": "İstasyon", "labelEn": "Stations" },
+      { "value": 21000, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
+      { "value": 206200, "suffix": "", "label": "Ton Kargo", "labelEn": "Tons Cargo" },
+      { "value": 180, "suffix": "", "label": "Personel", "labelEn": "Personnel" }
     ]
   },
   {
     "country": "Macaristan",
+    "countryEn": "Hungary",
     "code": "HU",
+    "flag": "🇭🇺",
+    "cities": ["Budapeşte"],
+    "airports": ["Budapeşte Ferenc Liszt (BUD)"],
+    "mapX": "50.5",
+    "mapY": "33.0",
     "stats": [
-      { "value": 2, "suffix": "", "label": "İstasyon" },
-      { "value": 2800, "suffix": "", "label": "Uçuş" },
-      { "value": 1400, "suffix": "", "label": "Ton Kargo" },
-      { "value": 95, "suffix": "", "label": "Personel" }
+      { "value": 1, "suffix": "", "label": "İstasyon", "labelEn": "Stations" },
+      { "value": 24500, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
+      { "value": 90000, "suffix": "", "label": "Ton Kargo", "labelEn": "Tons Cargo" },
+      { "value": 800, "suffix": "", "label": "Personel", "labelEn": "Personnel" }
+    ]
+  },
+  {
+    "country": "Tanzanya",
+    "countryEn": "Tanzania",
+    "code": "TZ",
+    "flag": "🇹🇿",
+    "cities": ["Dar es Salaam"],
+    "airports": ["Julius Nyerere Uluslararası (DAR)"],
+    "mapX": "55.0",
+    "mapY": "58.5",
+    "stats": [
+      { "value": 1, "suffix": "", "label": "İstasyon", "labelEn": "Stations" }
+    ]
+  },
+  {
+    "country": "Endonezya",
+    "countryEn": "Indonesia",
+    "code": "ID",
+    "flag": "🇮🇩",
+    "cities": ["Jakarta", "Bali", "Surabaya", "Medan"],
+    "airports": ["Soekarno-Hatta (CGK)", "Ngurah Rai (DPS)", "Juanda (SUB)", "Kualanamu (KNO)"],
+    "mapX": "80.5",
+    "mapY": "58.0",
+    "stats": [
+      { "value": 26, "suffix": "", "label": "İstasyon", "labelEn": "Stations" },
+      { "value": 39435, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
+      { "value": 1000, "suffix": "+", "label": "Personel", "labelEn": "Personnel" },
+      { "value": 40, "suffix": "+", "label": "Müşteri", "labelEn": "Customers" }
     ]
   }
 ]

@@ -169,35 +169,6 @@
         </form>
       </div>
 
-      <!-- Bottom footer bar -->
-      <div
-        ref="footerBarRef"
-        class="flex items-center justify-between pt-8 border-t border-gray-200 opacity-0"
-      >
-        <!-- Logo -->
-        <img
-          src="https://www.celebiaviation.com/themes/custom/celebi/logo.svg"
-          alt="Celebi Aviation"
-          class="h-6 w-auto opacity-70"
-        />
-
-        <!-- Links -->
-        <div class="hidden md:flex items-center gap-10">
-          <a
-            v-for="link in footerLinks"
-            :key="link"
-            href="#"
-            class="text-gray-400 text-sm hover:text-gray-700 transition-colors duration-300"
-          >
-            {{ link }}
-          </a>
-        </div>
-
-        <!-- Copyright -->
-        <p class="text-gray-400 text-xs tracking-[1px]">
-          © {{ new Date().getFullYear() }} Celebi Aviation
-        </p>
-      </div>
     </div>
   </section>
 </template>
@@ -210,7 +181,6 @@ const contactRef = ref<HTMLElement>()
 const contactLeftRef = ref<HTMLElement>()
 const contactRightRef = ref<HTMLElement>()
 const contactLineRef = ref<HTMLElement>()
-const footerBarRef = ref<HTMLElement>()
 const formSectionRef = ref<HTMLElement>()
 const field0Ref = ref<HTMLElement>()
 const field1Ref = ref<HTMLElement>()
@@ -224,12 +194,6 @@ const contactInfo = computed(() => [
   { label: t('contact.hq'), value: t('contact.hqValue'), href: '#' },
   { label: t('contact.email'), value: 'info@celebiaviation.com', href: 'mailto:info@celebiaviation.com' },
   { label: t('contact.phone'), value: '+90 212 000 00 00', href: 'tel:+902120000000' },
-])
-
-const footerLinks = computed(() => [
-  t('contact.privacy'),
-  t('contact.terms'),
-  t('contact.press'),
 ])
 
 // ── Form state ────────────────────────────────────────────────────────────────
@@ -312,14 +276,5 @@ onMounted(() => {
     },
   })
 
-  gsap.to(footerBarRef.value!, {
-    opacity: 1,
-    duration: 0.8,
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: footerBarRef.value,
-      start: 'top 90%',
-    },
-  })
 })
 </script>

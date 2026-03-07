@@ -44,7 +44,7 @@
 import { ref, computed, watch, onMounted, nextTick } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import statsData from '~/data/stats.json'
+import statsData from '@@/data/stats.json'
 
 const { t, locale } = useI18n()
 

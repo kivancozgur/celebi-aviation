@@ -1,3 +1,12 @@
+/* Self-hosted Inter font — GDPR uyumlu, Google Fonts CDN kullanılmıyor */
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/inter/800.css';
+@import '@fontsource/inter/900.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,6 +53,7 @@ html.lenis body {
 .word-wrap {
   overflow: hidden;
   display: inline-block;
+  padding-bottom: 0.15em;
 }
 
 /* Cursor style */
@@ -69,6 +79,15 @@ html.lenis body {
 /* Service card image zoom on hover */
 .service-card:hover .card-img {
   transform: scale(1.05);
+}
+
+/* Scrollbar hide utility (used for horizontal scroll containers) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* Scroll progress bar */

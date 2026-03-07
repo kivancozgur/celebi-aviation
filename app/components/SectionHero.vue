@@ -23,7 +23,7 @@
     <!-- Content -->
     <div
       ref="heroContentRef"
-      class="relative z-10 h-full flex flex-col justify-end pb-20 px-20 max-w-screen-xl"
+      class="relative z-10 h-full flex flex-col justify-end pb-20 px-6 md:px-12 lg:px-20 max-w-screen-xl"
     >
       <!-- Label -->
       <div ref="heroLabelRef" class="flex items-center gap-3 mb-8 opacity-0">
@@ -34,11 +34,11 @@
       </div>
 
       <!-- Title — each word wrapped for animation -->
-      <h1 class="text-[88px] font-[800] text-white leading-[1] tracking-[-3px] mb-8">
+      <h1 class="text-[42px] sm:text-[56px] md:text-[72px] lg:text-[88px] font-[800] text-white leading-[1.15] tracking-[-3px] mb-8">
         <span
           v-for="(word, i) in titleWords"
           :key="i"
-          class="word-wrap"
+          class="word-wrap pb-[0.15em]"
         >
           <span
             :ref="(el) => setWordRef(el as HTMLElement, i)"
@@ -52,9 +52,9 @@
       <!-- Bottom row -->
       <div ref="heroBottomRef" class="flex items-end justify-between w-full opacity-0">
         <p class="text-white/50 text-base leading-[1.7] max-w-sm">
-          Dunya genelinde 4 ulkede, 60'tan fazla<br />
-          havalimaninda yer hizmetleri, kargo,<br />
-          genel havacilik ve premium cozumler.
+          Dünya genelinde 4 ülkede, 60'tan fazla<br />
+          havalimanında yer hizmetleri, kargo,<br />
+          genel havacılık ve premium çözümler.
         </p>
 
         <!-- Scroll indicator -->
@@ -81,7 +81,7 @@ const labelLineRef = ref<HTMLElement>()
 const heroBottomRef = ref<HTMLElement>()
 const scrollLineRef = ref<HTMLElement>()
 
-const titleWords = ['Havaciligin', 'GeleceGini', 'Tasiyoruz.']
+const titleWords = ['Havacılığın', 'Geleceğini', 'Taşıyoruz.']
 const wordRefs: HTMLElement[] = []
 
 function setWordRef(el: HTMLElement | null, i: number) {

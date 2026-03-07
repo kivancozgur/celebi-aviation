@@ -1,7 +1,7 @@
 <template>
   <nav
     ref="navRef"
-    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-20 h-20"
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 lg:px-20 h-20"
     :class="{ 'nav-scrolled': isScrolled }"
   >
     <!-- Logo -->
@@ -12,19 +12,23 @@
 
     <!-- Nav Links -->
     <ul class="hidden md:flex items-center gap-12">
-      <li v-for="link in links" :key="link.label">
+      <li v-for="link in links" :key="link.key">
         <a
           :href="link.href"
           class="nav-link text-white/50 hover:text-white text-[13px] tracking-[0.5px] transition-colors duration-300"
         >
-          {{ link.label }}
+          {{ $t(link.key) }}
         </a>
       </li>
     </ul>
 
     <!-- Right Side -->
     <div class="flex items-center gap-6">
-      <span class="text-white/40 text-xs font-medium tracking-[1px] hidden md:block">TR / EN</span>
+      <div class="text-white text-xs font-medium tracking-[1px] hidden md:flex items-center gap-1">
+        <button @click="setLocale('tr')" :class="locale === 'tr' ? 'opacity-100' : 'opacity-40'" class="transition-opacity duration-200 cursor-pointer">TR</button>
+        <span class="opacity-30">/</span>
+        <button @click="setLocale('en')" :class="locale === 'en' ? 'opacity-100' : 'opacity-40'" class="transition-opacity duration-200 cursor-pointer">EN</button>
+      </div>
       <button
         class="flex flex-col gap-[6px] group cursor-pointer"
         aria-label="Menu"
@@ -43,14 +47,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 defineEmits<{ menu: [] }>()
 
+const { locale, setLocale } = useI18n()
+
 const navRef = ref<HTMLElement>()
 const isScrolled = ref(false)
 
 const links = [
-  { label: 'Intro', href: '#hero' },
-  { label: 'Hizmetler', href: '#services' },
-  { label: 'Hakkinda', href: '#about' },
-  { label: 'Iletisim', href: '#contact' },
+  { key: 'nav.services', href: '#services' },
+  { key: 'nav.aircraft', href: '#aircraft' },
+  { key: 'nav.about', href: '#about' },
+  { key: 'nav.contact', href: '#contact' },
 ]
 
 onMounted(() => {

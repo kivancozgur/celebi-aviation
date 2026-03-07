@@ -68,7 +68,7 @@ html.lenis body {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #0ea5e9;
+  background-color: #003DA5;
   transition: width 0.3s ease;
 }
 
@@ -96,7 +96,7 @@ html.lenis body {
   top: 0;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+  background: linear-gradient(90deg, #003DA5, #0055d4);
   z-index: 9999;
   transform-origin: left;
   transform: scaleX(0);

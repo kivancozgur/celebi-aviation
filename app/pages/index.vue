@@ -1,5 +1,5 @@
 <template>
-  <main class="bg-dark min-h-screen font-inter">
+  <main class="bg-white min-h-screen font-inter">
     <AppNav @menu="menuOpen = !menuOpen" />
     <SectionHero />
     <SectionServices />

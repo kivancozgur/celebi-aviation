@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" ref="contactRef" class="bg-dark py-[120px] px-6 md:px-12 lg:px-20 border-t border-white/5">
+  <section id="contact" ref="contactRef" class="bg-gray-50 py-[120px] px-6 md:px-12 lg:px-20 border-t border-gray-100">
     <div class="max-w-screen-xl mx-auto">
       <!-- Top row -->
       <div class="flex flex-col md:flex-row items-start justify-between mb-16 gap-10 md:gap-12">
@@ -9,9 +9,9 @@
             <span ref="contactLineRef" class="h-px w-0 bg-brand" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">{{ t('contact.label') }}</span>
           </div>
-          <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight tracking-tight max-w-lg">
+          <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-gray-900 leading-tight tracking-tight max-w-lg">
             {{ t('contact.titleLine1') }}<br />
-            <span class="text-white/50">{{ t('contact.titleLine2') }}</span>
+            <span class="text-gray-400">{{ t('contact.titleLine2') }}</span>
           </h2>
         </div>
 
@@ -22,10 +22,10 @@
             :key="info.label"
             class="mb-8"
           >
-            <div class="text-white/30 text-xs tracking-[2px] uppercase mb-2">{{ info.label }}</div>
+            <div class="text-gray-400 text-xs tracking-[2px] uppercase mb-2">{{ info.label }}</div>
             <a
               :href="info.href"
-              class="text-white text-base hover:text-brand transition-colors duration-300"
+              class="text-gray-700 text-base hover:text-brand transition-colors duration-300"
             >
               {{ info.value }}
             </a>
@@ -61,7 +61,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
             <!-- Ad Soyad -->
             <div ref="field0Ref" class="opacity-0 translate-y-8">
-              <label for="contact-name" class="block text-white/40 text-xs tracking-[2px] uppercase mb-2">
+              <label for="contact-name" class="block text-gray-500 text-xs tracking-[2px] uppercase mb-2">
                 {{ t('contact.form.name') }} <span class="text-brand" aria-hidden="true">*</span>
               </label>
               <input
@@ -73,8 +73,8 @@
                 :placeholder="t('contact.form.name')"
                 aria-describedby="contact-name-error"
                 :aria-invalid="!!errors.name"
-                class="w-full bg-white/5 border rounded-xl px-4 py-3 text-white text-sm placeholder-white/20 outline-none transition-all duration-300 focus:ring-2 focus:ring-brand/60"
-                :class="errors.name ? 'border-red-500/60' : 'border-white/10 hover:border-white/20 focus:border-brand/60'"
+                class="w-full bg-white border rounded-xl px-4 py-3 text-gray-900 text-sm placeholder-gray-400 outline-none transition-all duration-300 focus:ring-2 focus:ring-brand/60"
+                :class="errors.name ? 'border-red-400' : 'border-gray-200 hover:border-gray-300 focus:border-brand/60'"
               />
               <p v-if="errors.name" id="contact-name-error" role="alert" class="mt-1.5 text-red-400 text-xs">
                 {{ errors.name }}
@@ -83,7 +83,7 @@
 
             <!-- E-posta -->
             <div ref="field1Ref" class="opacity-0 translate-y-8">
-              <label for="contact-email" class="block text-white/40 text-xs tracking-[2px] uppercase mb-2">
+              <label for="contact-email" class="block text-gray-500 text-xs tracking-[2px] uppercase mb-2">
                 {{ t('contact.form.email') }} <span class="text-brand" aria-hidden="true">*</span>
               </label>
               <input
@@ -95,8 +95,8 @@
                 placeholder="ornek@firma.com"
                 aria-describedby="contact-email-error"
                 :aria-invalid="!!errors.email"
-                class="w-full bg-white/5 border rounded-xl px-4 py-3 text-white text-sm placeholder-white/20 outline-none transition-all duration-300 focus:ring-2 focus:ring-brand/60"
-                :class="errors.email ? 'border-red-500/60' : 'border-white/10 hover:border-white/20 focus:border-brand/60'"
+                class="w-full bg-white border rounded-xl px-4 py-3 text-gray-900 text-sm placeholder-gray-400 outline-none transition-all duration-300 focus:ring-2 focus:ring-brand/60"
+                :class="errors.email ? 'border-red-400' : 'border-gray-200 hover:border-gray-300 focus:border-brand/60'"
               />
               <p v-if="errors.email" id="contact-email-error" role="alert" class="mt-1.5 text-red-400 text-xs">
                 {{ errors.email }}
@@ -105,7 +105,7 @@
 
             <!-- Konu -->
             <div ref="field2Ref" class="opacity-0 translate-y-8 md:col-span-2">
-              <label for="contact-subject" class="block text-white/40 text-xs tracking-[2px] uppercase mb-2">
+              <label for="contact-subject" class="block text-gray-500 text-xs tracking-[2px] uppercase mb-2">
                 {{ t('contact.form.subject') }} <span class="text-brand" aria-hidden="true">*</span>
               </label>
               <input
@@ -116,8 +116,8 @@
                 :placeholder="t('contact.form.subject')"
                 aria-describedby="contact-subject-error"
                 :aria-invalid="!!errors.subject"
-                class="w-full bg-white/5 border rounded-xl px-4 py-3 text-white text-sm placeholder-white/20 outline-none transition-all duration-300 focus:ring-2 focus:ring-brand/60"
-                :class="errors.subject ? 'border-red-500/60' : 'border-white/10 hover:border-white/20 focus:border-brand/60'"
+                class="w-full bg-white border rounded-xl px-4 py-3 text-gray-900 text-sm placeholder-gray-400 outline-none transition-all duration-300 focus:ring-2 focus:ring-brand/60"
+                :class="errors.subject ? 'border-red-400' : 'border-gray-200 hover:border-gray-300 focus:border-brand/60'"
               />
               <p v-if="errors.subject" id="contact-subject-error" role="alert" class="mt-1.5 text-red-400 text-xs">
                 {{ errors.subject }}
@@ -126,7 +126,7 @@
 
             <!-- Mesaj -->
             <div ref="field3Ref" class="opacity-0 translate-y-8 md:col-span-2">
-              <label for="contact-message" class="block text-white/40 text-xs tracking-[2px] uppercase mb-2">
+              <label for="contact-message" class="block text-gray-500 text-xs tracking-[2px] uppercase mb-2">
                 {{ t('contact.form.message') }} <span class="text-brand" aria-hidden="true">*</span>
               </label>
               <textarea
@@ -137,8 +137,8 @@
                 :placeholder="t('contact.form.message')"
                 aria-describedby="contact-message-error"
                 :aria-invalid="!!errors.message"
-                class="w-full bg-white/5 border rounded-xl px-4 py-3 text-white text-sm placeholder-white/20 outline-none transition-all duration-300 focus:ring-2 focus:ring-brand/60 resize-none"
-                :class="errors.message ? 'border-red-500/60' : 'border-white/10 hover:border-white/20 focus:border-brand/60'"
+                class="w-full bg-white border rounded-xl px-4 py-3 text-gray-900 text-sm placeholder-gray-400 outline-none transition-all duration-300 focus:ring-2 focus:ring-brand/60 resize-none"
+                :class="errors.message ? 'border-red-400' : 'border-gray-200 hover:border-gray-300 focus:border-brand/60'"
               />
               <p v-if="errors.message" id="contact-message-error" role="alert" class="mt-1.5 text-red-400 text-xs">
                 {{ errors.message }}
@@ -172,13 +172,14 @@
       <!-- Bottom footer bar -->
       <div
         ref="footerBarRef"
-        class="flex items-center justify-between pt-8 border-t border-white/10 opacity-0"
+        class="flex items-center justify-between pt-8 border-t border-gray-200 opacity-0"
       >
         <!-- Logo -->
-        <div class="flex items-center gap-3">
-          <span class="w-2 h-8 bg-brand rounded-[2px]" />
-          <span class="text-white font-bold text-lg tracking-[4px]">CELEBI</span>
-        </div>
+        <img
+          src="https://www.celebiaviation.com/themes/custom/celebi/logo.svg"
+          alt="Celebi Aviation"
+          class="h-6 w-auto opacity-70"
+        />
 
         <!-- Links -->
         <div class="hidden md:flex items-center gap-10">
@@ -186,14 +187,14 @@
             v-for="link in footerLinks"
             :key="link"
             href="#"
-            class="text-white/30 text-sm hover:text-white transition-colors duration-300"
+            class="text-gray-400 text-sm hover:text-gray-700 transition-colors duration-300"
           >
             {{ link }}
           </a>
         </div>
 
         <!-- Copyright -->
-        <p class="text-white/20 text-xs tracking-[1px]">
+        <p class="text-gray-400 text-xs tracking-[1px]">
           © {{ new Date().getFullYear() }} Celebi Aviation
         </p>
       </div>

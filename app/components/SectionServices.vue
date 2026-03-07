@@ -3,7 +3,7 @@
   <section
     id="services"
     ref="outerRef"
-    class="relative bg-dark"
+    class="relative bg-gray-50"
   >
     <!-- Sticky container: pinned during horizontal scroll -->
     <div
@@ -20,9 +20,9 @@
             <span class="h-px w-0 bg-brand" ref="svcLineRef" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">{{ t('services.label') }}</span>
           </div>
-          <h2 class="text-[56px] font-bold text-white tracking-[-2px]">{{ t('services.title') }}</h2>
+          <h2 class="text-[56px] font-bold text-gray-900 tracking-[-2px]">{{ t('services.title') }}</h2>
         </div>
-        <p class="text-white/40 text-base leading-7 text-right hidden lg:block">
+        <p class="text-gray-500 text-base leading-7 text-right hidden lg:block">
           {{ t('services.subtitle') }}
         </p>
       </div>
@@ -81,10 +81,10 @@
             v-for="(_, i) in services"
             :key="i"
             class="h-px transition-all duration-300"
-            :class="i === 0 ? 'w-8 bg-brand' : 'w-4 bg-white/20'"
+            :class="i === 0 ? 'w-8 bg-brand' : 'w-4 bg-gray-300'"
           />
         </div>
-        <span class="text-white/30 text-xs tracking-[1px]">{{ services.length }} {{ t('services.label').toLowerCase() }}</span>
+        <span class="text-gray-400 text-xs tracking-[1px]">{{ services.length }} {{ t('services.label').toLowerCase() }}</span>
       </div>
     </div>
   </section>

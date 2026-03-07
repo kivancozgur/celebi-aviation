@@ -2,7 +2,7 @@
   <section
     id="haberler"
     ref="sectionRef"
-    class="bg-dark py-[120px] px-6 md:px-12 lg:px-20"
+    class="bg-white py-[120px] px-6 md:px-12 lg:px-20"
   >
     <!-- Section header -->
     <div ref="headerRef" class="flex flex-col md:flex-row items-start justify-between mb-16 gap-8 opacity-0 translate-y-12">
@@ -11,22 +11,22 @@
           <span ref="lineRef" class="h-px w-0 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">{{ t('news.label') }}</span>
         </div>
-        <h2 class="text-[56px] font-bold text-white tracking-[-2px] leading-[1.05]">{{ t('news.title') }}</h2>
+        <h2 class="text-[56px] font-bold text-gray-900 tracking-[-2px] leading-[1.05]">{{ t('news.title') }}</h2>
       </div>
-      <p class="text-white/40 text-base leading-7 md:text-right hidden lg:block pt-2">
+      <p class="text-gray-500 text-base leading-7 md:text-right hidden lg:block pt-2">
         {{ t('news.subtitle') }}
       </p>
     </div>
 
     <!-- Divider -->
-    <div ref="dividerRef" class="h-px bg-white/10 mb-16 origin-left scale-x-0" />
+    <div ref="dividerRef" class="h-px bg-gray-200 mb-16 origin-left scale-x-0" />
 
     <!-- News grid -->
     <div ref="gridRef" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <article
         v-for="item in news"
         :key="item.id"
-        class="news-card group opacity-0 translate-y-10 flex flex-col rounded-2xl overflow-hidden border border-white/5 bg-white/[0.03] hover:border-brand/30 transition-colors duration-500"
+        class="news-card group opacity-0 translate-y-10 flex flex-col rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:border-brand/40 hover:shadow-md transition-all duration-500"
       >
         <!-- Image -->
         <div class="relative h-[220px] overflow-hidden">
@@ -49,19 +49,19 @@
           </time>
 
           <!-- Title -->
-          <h3 class="text-white text-lg font-semibold leading-snug mb-3 group-hover:text-brand/90 transition-colors duration-300">
+          <h3 class="text-gray-900 text-lg font-semibold leading-snug mb-3 group-hover:text-brand transition-colors duration-300">
             {{ item.title }}
           </h3>
 
           <!-- Summary -->
-          <p class="text-white/40 text-sm leading-relaxed flex-1 mb-6">
+          <p class="text-gray-500 text-sm leading-relaxed flex-1 mb-6">
             {{ item.summary }}
           </p>
 
           <!-- Read more link -->
           <a
             :href="`/haberler/${item.slug}`"
-            class="inline-flex items-center gap-2 text-white/60 text-sm font-medium group/link hover:text-brand transition-colors duration-300 self-start"
+            class="inline-flex items-center gap-2 text-gray-500 text-sm font-medium group/link hover:text-brand transition-colors duration-300 self-start"
           >
             <span class="relative">
               {{ t('news.readMore') }}
@@ -91,7 +91,7 @@
     <div ref="ctaRef" class="mt-16 flex justify-center opacity-0 translate-y-6">
       <a
         href="/haberler"
-        class="inline-flex items-center gap-3 border border-brand/40 hover:border-brand hover:bg-brand/10 text-white text-sm font-medium px-8 py-4 rounded-full transition-all duration-400 group"
+        class="inline-flex items-center gap-3 border border-brand/40 hover:border-brand hover:bg-brand/10 text-gray-800 text-sm font-medium px-8 py-4 rounded-full transition-all duration-400 group"
       >
         {{ t('news.allNews') }}
         <svg

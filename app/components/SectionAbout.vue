@@ -1,5 +1,5 @@
 <template>
-  <section id="about" ref="aboutRef" class="bg-dark py-[120px] px-6 md:px-12 lg:px-20">
+  <section id="about" ref="aboutRef" class="bg-white py-[120px] px-6 md:px-12 lg:px-20">
     <!-- Top: Title + Description -->
     <div class="flex flex-col md:flex-row items-start justify-between mb-20 gap-10 md:gap-20">
       <!-- Left: Label + Title -->
@@ -8,7 +8,7 @@
           <span ref="aboutLineRef" class="h-px w-0 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">{{ t('about.label') }}</span>
         </div>
-        <h2 class="text-[64px] font-bold text-white leading-[1.05] tracking-[-2px] max-w-lg">
+        <h2 class="text-[64px] font-bold text-gray-900 leading-[1.05] tracking-[-2px] max-w-lg">
           <span
             v-for="(word, i) in aboutTitleWords"
             :key="i"
@@ -24,7 +24,7 @@
 
       <!-- Right: Description + CTA -->
       <div ref="aboutRightRef" class="max-w-md pt-4 opacity-0 translate-x-12">
-        <p class="text-white/50 text-[17px] leading-[1.8] mb-8">
+        <p class="text-gray-500 text-[17px] leading-[1.8] mb-8">
           {{ t('about.desc') }}
         </p>
         <a
@@ -59,7 +59,7 @@
     <!-- Divider line -->
     <div
       ref="dividerRef"
-      class="h-px bg-white/10 mb-20 origin-left scale-x-0"
+      class="h-px bg-gray-200 mb-20 origin-left scale-x-0"
     />
 
     <!-- Stats row -->
@@ -71,11 +71,11 @@
       >
         <div
           class="text-[48px] font-bold tracking-[-2px] leading-none mb-2"
-          :class="stat.accent ? 'text-brand' : 'text-white'"
+          :class="stat.accent ? 'text-brand' : 'text-gray-900'"
         >
           <span :ref="(el) => setStatRef(el as HTMLElement, stat.label)">{{ stat.display }}</span>
         </div>
-        <div class="text-white/40 text-[13px] tracking-[1px] uppercase">{{ stat.label }}</div>
+        <div class="text-gray-500 text-[13px] tracking-[1px] uppercase">{{ stat.label }}</div>
       </div>
     </div>
   </section>

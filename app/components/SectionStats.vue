@@ -99,8 +99,8 @@ onMounted(() => {
 <style scoped>
 .stats-section {
   padding: 6rem 1.5rem;
-  background-color: #0a0a0a;
-  color: #f0f0f0;
+  background-color: #f9fafb;
+  color: #111827;
 }
 
 .container {
@@ -127,7 +127,7 @@ onMounted(() => {
 .section-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #111827;
   margin: 0;
   line-height: 1.15;
 }
@@ -167,11 +167,11 @@ onMounted(() => {
 }
 
 .tab-btn:hover {
-  color: #e5e7eb;
+  color: #374151;
 }
 
 .tab-btn.active {
-  color: #ffffff;
+  color: #111827;
 }
 
 .tab-btn.active::after {
@@ -198,15 +198,16 @@ onMounted(() => {
   justify-content: center;
   gap: 0.5rem;
   padding: 2rem 1rem;
-  background: #141414;
-  border: 1px solid #1f1f1f;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 0.75rem;
   text-align: center;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .stat-card:hover {
   border-color: #003DA5;
+  box-shadow: 0 4px 12px rgba(0, 61, 165, 0.08);
 }
 
 .stat-value {

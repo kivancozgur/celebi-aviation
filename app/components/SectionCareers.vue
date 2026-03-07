@@ -1,5 +1,5 @@
 <template>
-  <section id="kariyer" ref="sectionRef" class="bg-dark py-[120px] px-6 md:px-12 lg:px-20 border-t border-white/5">
+  <section id="kariyer" ref="sectionRef" class="bg-gray-50 py-[120px] px-6 md:px-12 lg:px-20 border-t border-gray-100">
     <div class="max-w-screen-xl mx-auto">
       <div class="flex flex-col lg:flex-row items-start justify-between gap-16 lg:gap-24">
 
@@ -9,11 +9,11 @@
             <span ref="lineRef" class="h-px w-0 bg-brand" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">{{ t('careers.label') }}</span>
           </div>
-          <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-tight tracking-tight mb-6">
+          <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-gray-900 leading-tight tracking-tight mb-6">
             {{ t('careers.titleLine1') }}<br />
-            <span class="text-white/50">{{ t('careers.titleLine2') }}</span>
+            <span class="text-gray-400">{{ t('careers.titleLine2') }}</span>
           </h2>
-          <p class="text-white/50 text-[17px] leading-[1.8] mb-10">
+          <p class="text-gray-500 text-[17px] leading-[1.8] mb-10">
             {{ t('careers.desc') }}
           </p>
           <NuxtLink
@@ -32,7 +32,7 @@
           <div
             v-for="(feature, i) in features"
             :key="i"
-            class="flex items-start gap-5 bg-white/[0.03] border border-white/8 rounded-2xl px-6 py-5 hover:border-brand/30 transition-colors duration-300"
+            class="flex items-start gap-5 bg-white border border-gray-200 rounded-2xl px-6 py-5 hover:border-brand/30 hover:shadow-sm transition-all duration-300"
           >
             <!-- Icon -->
             <div class="flex-none w-11 h-11 rounded-xl bg-brand/10 flex items-center justify-center text-brand">
@@ -40,8 +40,8 @@
             </div>
             <!-- Text -->
             <div>
-              <h3 class="text-white font-semibold text-base mb-1">{{ feature.title }}</h3>
-              <p class="text-white/40 text-sm leading-relaxed">{{ feature.desc }}</p>
+              <h3 class="text-gray-900 font-semibold text-base mb-1">{{ feature.title }}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{{ feature.desc }}</p>
             </div>
           </div>
         </div>

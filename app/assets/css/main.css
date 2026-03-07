@@ -13,8 +13,8 @@
 
 @layer base {
   html {
-    background-color: #0a0a0a;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #0a0a0a;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -70,6 +70,12 @@ html.lenis body {
   height: 1px;
   background-color: #003DA5;
   transition: width 0.3s ease;
+}
+
+/* Light theme utilities */
+.light-section {
+  background-color: #ffffff;
+  color: #0a0a0a;
 }
 
 .nav-link:hover::after {

@@ -34,7 +34,7 @@ export default defineNuxtConfig({
           "script-src 'self' 'unsafe-inline'",
           "style-src 'self' 'unsafe-inline'",
           "font-src 'self'",
-          "img-src 'self' data: https://images.unsplash.com",
+          "img-src 'self' data: https://images.unsplash.com https://www.celebiaviation.com",
           "connect-src 'self'",
           "frame-ancestors 'none'",
         ].join('; '),

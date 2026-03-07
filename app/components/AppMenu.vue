@@ -2,12 +2,12 @@
   <div
     v-show="open"
     ref="menuRef"
-    class="fixed inset-0 z-[100] bg-dark flex flex-col justify-center px-20"
+    class="fixed inset-0 z-[100] bg-white flex flex-col justify-center px-20"
     @click.self="emit('close')"
   >
     <!-- Close button -->
     <button
-      class="absolute top-7 right-20 text-white/50 hover:text-white transition-colors duration-300 cursor-pointer"
+      class="absolute top-7 right-20 text-gray-400 hover:text-gray-900 transition-colors duration-300 cursor-pointer"
       aria-label="Menüyü kapat"
       @click="emit('close')"
     >
@@ -23,7 +23,7 @@
         :key="link.label"
         :ref="(el) => { if (el) linksRef.push(el as HTMLElement) }"
         :href="link.href"
-        class="block text-[clamp(2.5rem,6vw,5rem)] font-bold text-white/20 hover:text-white transition-colors duration-300 leading-tight tracking-tight"
+        class="block text-[clamp(2.5rem,6vw,5rem)] font-bold text-gray-200 hover:text-gray-900 transition-colors duration-300 leading-tight tracking-tight"
         @click="emit('close')"
       >
         {{ link.label }}
@@ -31,9 +31,12 @@
     </nav>
 
     <!-- Bottom logo -->
-    <div class="absolute bottom-12 left-20 flex items-center gap-3">
-      <span class="w-2 h-8 bg-brand rounded-[2px]" />
-      <span class="text-white font-bold text-lg tracking-[4px]">CELEBI</span>
+    <div class="absolute bottom-12 left-20">
+      <img
+        src="https://www.celebiaviation.com/themes/custom/celebi/logo.svg"
+        alt="Celebi Aviation"
+        class="h-7 w-auto opacity-60"
+      />
     </div>
   </div>
 </template>

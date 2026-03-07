@@ -64,15 +64,15 @@ function reject() {
   <div
     v-if="!accepted"
     ref="bannerRef"
-    class="fixed bottom-0 left-0 right-0 z-50 bg-dark/95 backdrop-blur-sm border-t border-white/10"
+    class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-t border-gray-200 shadow-lg"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <p class="text-sm text-white/80 leading-relaxed">
+        <p class="text-sm text-gray-600 leading-relaxed">
           Bu site, deneyiminizi iyileştirmek için çerezler kullanmaktadır.
           <NuxtLink
             to="/cerez-politikasi"
-            class="underline text-white hover:text-brand transition-colors"
+            class="underline text-gray-900 hover:text-brand transition-colors"
           >
             Çerez Politikası
           </NuxtLink>
@@ -86,7 +86,7 @@ function reject() {
             Kabul Et
           </button>
           <button
-            class="px-5 py-2 rounded text-sm font-medium border border-white/30 text-white hover:bg-white/10 transition-colors"
+            class="px-5 py-2 rounded text-sm font-medium border border-gray-300 text-gray-700 hover:bg-gray-100 transition-colors"
             @click="reject"
           >
             Reddet

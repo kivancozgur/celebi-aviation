@@ -3,7 +3,9 @@
     "services": "Services",
     "aircraft": "Fleet",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "lostItem": "Lost Item",
+    "cargoTracking": "Cargo Tracking"
   },
   "hero": {
     "titleWords": ["Shaping", "the Future", "of Aviation."],
@@ -13,27 +15,19 @@
     "label": "Services",
     "title": "What We Do",
     "subtitle": "Flawless solutions at every point of aviation.",
-    "groundHandling": {
-      "title": "Ground Handling",
-      "desc": "Aircraft marshalling, baggage, passenger services, and flight operations support."
-    },
-    "cargo": {
-      "title": "Cargo",
-      "desc": "Fast and secure cargo solutions with our global network."
-    },
-    "generalAviation": {
-      "title": "General Aviation",
-      "desc": "Comprehensive FBO services for private and business aviation."
-    },
-    "executiveLounge": {
-      "title": "VIP Lounge",
-      "desc": "Premium VIP lounges and maintenance services at world's finest airports."
-    }
+    "items": [
+      { "title": "Ground Handling", "desc": "Aircraft, passenger and baggage operations, apron services and ground equipment support." },
+      { "title": "Cargo & Logistics", "desc": "Air cargo warehousing, handling and international logistics solutions." },
+      { "title": "General Aviation", "desc": "Comprehensive FBO services for private aircraft, helicopter and VIP operations." },
+      { "title": "Lounge & Platinum", "desc": "Premium passenger experience and VIP lounges at the world's finest airports." },
+      { "title": "Technical Services", "desc": "Aircraft maintenance, repair and overhaul services with technical support." }
+    ]
   },
   "about": {
     "label": "About Us",
     "titleWords": ["From Vision", "to Execution."],
-    "desc": "Celebi Aviation leads the industry with world-class service standards at the heart of aviation.",
+    "desc": "Since 1958, Celebi has been at the heart of aviation, setting industry standards with world-class service quality. Combining courage and pragmatism, we make a difference at every airport.",
+    "cta": "Learn More",
     "stats": {
       "founded": "Founded",
       "airports": "Airports",
@@ -43,6 +37,8 @@
   },
   "contact": {
     "label": "Contact",
+    "titleLine1": "Let's Move",
+    "titleLine2": "Forward Together.",
     "hq": "Headquarters",
     "hqValue": "Istanbul, Turkey",
     "email": "Email",
@@ -67,5 +63,73 @@
     "terms": "Terms of Use",
     "privacy": "Privacy",
     "press": "Press"
+  },
+  "news": {
+    "label": "Media",
+    "title": "Latest News",
+    "subtitle": "Latest developments and announcements from Celebi Aviation.",
+    "readMore": "Read More",
+    "allNews": "All News"
+  },
+  "careers": {
+    "label": "Careers",
+    "titleLine1": "Shaping the Future",
+    "titleLine2": "Together",
+    "desc": "Working at Celebi Aviation means growing in a dynamic industry with a strong team. We invite talented professionals to join us.",
+    "cta": "View Open Positions",
+    "features": [
+      { "title": "HR Policies", "desc": "Transparent and fair human resources practices that prioritize employee well-being." },
+      { "title": "Celebi Academy", "desc": "Training programs and career planning opportunities that support continuous development." },
+      { "title": "Open Positions", "desc": "Opportunities across a wide range from operations to technology, cargo to VIP services." }
+    ]
+  },
+  "statsSection": {
+    "label": "Celebi in Numbers",
+    "title": "Global Impact"
+  },
+  "footer": {
+    "tagline": "Leader in global aviation services worldwide.",
+    "copyright": "Celebi Aviation. All rights reserved.",
+    "kvkk": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "terms": "Terms of Use",
+    "columns": [
+      {
+        "title": "About Us",
+        "links": [
+          { "label": "About Us", "href": "#about" },
+          { "label": "Quality & Safety", "href": "#" },
+          { "label": "Social Responsibility", "href": "#" },
+          { "label": "Investor Relations", "href": "#" },
+          { "label": "Ethics", "href": "#" }
+        ]
+      },
+      {
+        "title": "Services",
+        "links": [
+          { "label": "Ground Handling", "href": "#services" },
+          { "label": "Cargo & Warehouse", "href": "#services" },
+          { "label": "General Aviation", "href": "#services" },
+          { "label": "VIP Lounge", "href": "#services" },
+          { "label": "Technical Services", "href": "#services" }
+        ]
+      },
+      {
+        "title": "Media",
+        "links": [
+          { "label": "News", "href": "#news" },
+          { "label": "Events", "href": "#" },
+          { "label": "Corporate Communications", "href": "#contact" }
+        ]
+      },
+      {
+        "title": "Careers",
+        "links": [
+          { "label": "HR Policies", "href": "/en/kariyer" },
+          { "label": "Celebi Academy", "href": "/en/kariyer" },
+          { "label": "Open Positions", "href": "/en/kariyer" }
+        ]
+      }
+    ]
   }
 }

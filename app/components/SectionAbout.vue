@@ -6,7 +6,7 @@
       <div ref="aboutLeftRef" class="opacity-0 translate-y-16">
         <div class="flex items-center gap-3 mb-6">
           <span ref="aboutLineRef" class="h-px w-0 bg-brand" />
-          <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Hakkimizda</span>
+          <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">{{ t('about.label') }}</span>
         </div>
         <h2 class="text-[64px] font-bold text-white leading-[1.05] tracking-[-2px] max-w-lg">
           <span
@@ -25,16 +25,14 @@
       <!-- Right: Description + CTA -->
       <div ref="aboutRightRef" class="max-w-md pt-4 opacity-0 translate-x-12">
         <p class="text-white/50 text-[17px] leading-[1.8] mb-8">
-          1958'den bu yana havacılığın kalbinde yer alan Çelebi, dünya standartlarında hizmet
-          kalitesiyle sektöre yön veriyor. Cesaret ve pragmatizmi birleştiren yaklaşımımızla,
-          her havalimanında fark yaratıyoruz.
+          {{ t('about.desc') }}
         </p>
         <a
           href="#contact"
           class="inline-flex items-center gap-3 text-white text-sm font-medium group"
         >
           <span class="relative">
-            Daha Fazla Bilgi
+            {{ t('about.cta') }}
             <span
               class="absolute bottom-0 left-0 h-px w-0 bg-brand transition-all duration-400 group-hover:w-full"
             />
@@ -48,7 +46,7 @@
           >
             <path
               d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5"
-              stroke="#0EA5E9"
+              stroke="#003DA5"
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -94,7 +92,8 @@ const aboutLineRef = ref<HTMLElement>()
 const dividerRef = ref<HTMLElement>()
 const statsRowRef = ref<HTMLElement>()
 
-const aboutTitleWords = ['Vizyondan', 'Uygulamaya.']
+const { tm, t } = useI18n()
+const aboutTitleWords = computed(() => tm('about.titleWords') as string[])
 const aboutWordRefs: HTMLElement[] = []
 const statRefs: Record<string, HTMLElement> = {}
 
@@ -106,12 +105,12 @@ function setStatRef(el: HTMLElement | null, label: string) {
   if (el) statRefs[label] = el
 }
 
-const stats = [
-  { label: 'Kuruluş Yılı', display: '1958', end: 1958, from: 1940, accent: false, suffix: '' },
-  { label: 'Havalimanı', display: '60+', end: 60, from: 0, accent: true, suffix: '+' },
-  { label: 'Çalışan', display: '10K+', end: 10, from: 0, accent: false, suffix: 'K+' },
-  { label: 'Ülke', display: '4', end: 4, from: 0, accent: true, suffix: '' },
-]
+const stats = computed(() => [
+  { label: t('about.stats.founded'), display: '1958', end: 1958, from: 1940, accent: false, suffix: '' },
+  { label: t('about.stats.airports'), display: '60+', end: 60, from: 0, accent: true, suffix: '+' },
+  { label: t('about.stats.employees'), display: '10K+', end: 10, from: 0, accent: false, suffix: 'K+' },
+  { label: t('about.stats.countries'), display: '4', end: 4, from: 0, accent: true, suffix: '' },
+])
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
@@ -174,14 +173,14 @@ onMounted(() => {
   })
 
   // Counter animations for each stat
-  stats.forEach((stat) => {
+  stats.value.forEach((stat) => {
     const el = statRefs[stat.label]
     if (!el) return
 
     const obj = { val: stat.from }
     gsap.to(obj, {
       val: stat.end,
-      duration: stat.label === 'Kuruluş Yılı' ? 1.5 : 1.8,
+      duration: stat.end === 1958 ? 1.5 : 1.8,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: statsRowRef.value,

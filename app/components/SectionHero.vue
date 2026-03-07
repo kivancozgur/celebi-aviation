@@ -52,9 +52,7 @@
       <!-- Bottom row -->
       <div ref="heroBottomRef" class="flex items-end justify-between w-full opacity-0">
         <p class="text-white/50 text-base leading-[1.7] max-w-sm">
-          Dünya genelinde 4 ülkede, 60'tan fazla<br />
-          havalimanında yer hizmetleri, kargo,<br />
-          genel havacılık ve premium çözümler.
+          {{ t('hero.subtitle') }}
         </p>
 
         <!-- Scroll indicator -->
@@ -81,7 +79,8 @@ const labelLineRef = ref<HTMLElement>()
 const heroBottomRef = ref<HTMLElement>()
 const scrollLineRef = ref<HTMLElement>()
 
-const titleWords = ['Havacılığın', 'Geleceğini', 'Taşıyoruz.']
+const { tm, t } = useI18n()
+const titleWords = computed(() => tm('hero.titleWords') as string[])
 const wordRefs: HTMLElement[] = []
 
 function setWordRef(el: HTMLElement | null, i: number) {

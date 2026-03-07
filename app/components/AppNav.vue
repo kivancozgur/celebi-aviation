@@ -4,11 +4,16 @@
     class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 lg:px-20 h-20"
     :class="{ 'nav-scrolled': isScrolled }"
   >
-    <!-- Logo -->
-    <div class="flex items-center gap-3">
-      <span class="w-2 h-8 bg-brand rounded-[2px]" />
-      <span class="text-white font-bold text-lg tracking-[4px]">CELEBI</span>
-    </div>
+    <!-- Logo (KAN-16) — kurumsal placeholder, gerçek logo marka ekibinden gelecek -->
+    <NuxtLink to="/" class="flex items-center gap-2 group">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- C harfi + kanat formu — kurumsal placeholder -->
+        <circle cx="16" cy="16" r="15" stroke="#003DA5" stroke-width="1.5"/>
+        <path d="M20 10.5C18.5 9.5 16.8 9 15 9C11.134 9 8 12.134 8 16C8 19.866 11.134 23 15 23C16.8 23 18.5 22.5 20 21.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 13L22 10L19 16L22 22L12 19" stroke="#003DA5" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span class="text-white font-bold text-lg tracking-tight">ÇELEBİ</span>
+    </NuxtLink>
 
     <!-- Nav Links -->
     <ul class="hidden md:flex items-center gap-12">
@@ -24,6 +29,24 @@
 
     <!-- Right Side -->
     <div class="flex items-center gap-6">
+      <!-- Utility links (KAN-15) — sadece md ve üzeri -->
+      <div class="hidden md:flex items-center gap-5 mr-4 border-r border-white/10 pr-5">
+        <!-- Kayıp Eşya Takibi -->
+        <a href="#" class="flex items-center gap-1.5 text-white/40 hover:text-white text-xs tracking-wide transition-colors group">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span class="hidden lg:inline">{{ $t('nav.lostItem') }}</span>
+        </a>
+        <!-- Kargo Takibi -->
+        <a href="#" class="flex items-center gap-1.5 text-white/40 hover:text-white text-xs tracking-wide transition-colors group">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          <span class="hidden lg:inline">{{ $t('nav.cargoTracking') }}</span>
+        </a>
+      </div>
       <div class="text-white text-xs font-medium tracking-[1px] hidden md:flex items-center gap-1">
         <button @click="setLocale('tr')" :class="locale === 'tr' ? 'opacity-100' : 'opacity-40'" class="transition-opacity duration-200 cursor-pointer">TR</button>
         <span class="opacity-30">/</span>

@@ -3,8 +3,11 @@
     <AppNav @menu="menuOpen = !menuOpen" />
     <SectionHero />
     <SectionServices />
+    <SectionStats />
     <SectionAbout />
     <SectionAircraft />
+    <SectionNews />
+    <SectionCareers />
     <SectionContact />
 
     <!-- Mobile menu overlay -->

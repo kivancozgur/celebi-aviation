@@ -3,7 +3,9 @@
     "services": "Hizmetler",
     "aircraft": "Uçak Filosu",
     "about": "Hakkında",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "lostItem": "Kayıp Eşya",
+    "cargoTracking": "Kargo Takibi"
   },
   "hero": {
     "titleWords": ["Havacılığın", "Geleceğini", "Taşıyoruz."],
@@ -13,27 +15,19 @@
     "label": "Hizmetler",
     "title": "Ne Yapıyoruz",
     "subtitle": "Havacılığın her noktasında kusursuz çözümler sunuyoruz.",
-    "groundHandling": {
-      "title": "Yer Hizmetleri",
-      "desc": "Uçak yönlendirme, bagaj, yolcu hizmetleri ve uçuş operasyonları desteği."
-    },
-    "cargo": {
-      "title": "Kargo",
-      "desc": "Küresel ağımızla hızlı ve güvenli kargo çözümleri sunuyoruz."
-    },
-    "generalAviation": {
-      "title": "Genel Havacılık",
-      "desc": "Özel uçak ve iş havacılığı için kapsamlı FBO hizmetleri."
-    },
-    "executiveLounge": {
-      "title": "VIP Lounge",
-      "desc": "Dünyanın seçkin havalimanlarında premium VIP salonları ve onarım hizmetleri."
-    }
+    "items": [
+      { "title": "Yer Hizmetleri", "desc": "Uçak yolcu ve bagaj operasyonları, apron hizmetleri ve yer ekipman desteği." },
+      { "title": "Kargo & Lojistik", "desc": "Hava kargo depolama, elleçleme ve uluslararası lojistik çözümleri." },
+      { "title": "Genel Havacılık", "desc": "Özel uçak, helikopter ve VIP operasyonları için kapsamlı FBO hizmetleri." },
+      { "title": "Lounge & Platinum", "desc": "Dünyanın en seçkin havalimanlarında premium yolcu deneyimi ve VIP bekleme salonları." },
+      { "title": "Teknik Hizmetler", "desc": "Uçak bakım, onarım ve revizyon hizmetleri ile teknik destek." }
+    ]
   },
   "about": {
     "label": "Hakkımızda",
     "titleWords": ["Vizyondan", "Uygulamaya."],
-    "desc": "Çelebi Havacılık, havacılığın kalbinde dünya standartlarında hizmet anlayışıyla sektöre yön veriyor.",
+    "desc": "1958'den bu yana havacılığın kalbinde yer alan Çelebi, dünya standartlarında hizmet kalitesiyle sektöre yön veriyor. Cesaret ve pragmatizmi birleştiren yaklaşımımızla, her havalimanında fark yaratıyoruz.",
+    "cta": "Daha Fazla Bilgi",
     "stats": {
       "founded": "Kuruluş Yılı",
       "airports": "Havalimanı",
@@ -43,6 +37,8 @@
   },
   "contact": {
     "label": "İletişim",
+    "titleLine1": "Birlikte",
+    "titleLine2": "ilerleyelim.",
     "hq": "Genel Merkez",
     "hqValue": "İstanbul, Türkiye",
     "email": "E-posta",
@@ -67,5 +63,73 @@
     "terms": "Kullanım Koşulları",
     "privacy": "Gizlilik",
     "press": "Basın"
+  },
+  "news": {
+    "label": "Medya",
+    "title": "Güncel Haberler",
+    "subtitle": "Çelebi Havacılık'tan en güncel gelişmeler ve duyurular.",
+    "readMore": "Devamını Oku",
+    "allNews": "Tüm Haberler"
+  },
+  "careers": {
+    "label": "Kariyer",
+    "titleLine1": "Geleceği Birlikte",
+    "titleLine2": "Şekillendirelim",
+    "desc": "Çelebi Havacılık'ta çalışmak; dinamik bir sektörde, güçlü bir ekiple büyüme fırsatı demektir. Yetenekli profesyonelleri ekibimize katılmaya davet ediyoruz.",
+    "cta": "Açık Pozisyonları Gör",
+    "features": [
+      { "title": "IK Politikaları", "desc": "Çalışan refahını ön planda tutan şeffaf ve adil insan kaynakları uygulamaları." },
+      { "title": "Çelebi Akademi", "desc": "Sürekli gelişimi destekleyen eğitim programları ve kariyer planlama imkânları." },
+      { "title": "Açık Pozisyonlar", "desc": "Operasyondan teknolojiye, kargo'dan VIP hizmetlerine geniş yelpazede fırsatlar." }
+    ]
+  },
+  "statsSection": {
+    "label": "Rakamlarla Çelebi",
+    "title": "Küresel Etki"
+  },
+  "footer": {
+    "tagline": "Dünya genelinde havacılık hizmetlerinde lider.",
+    "copyright": "Çelebi Havacılık. Tüm hakları saklıdır.",
+    "kvkk": "KVKK",
+    "cookies": "Çerez Politikası",
+    "terms": "Kullanım Koşulları",
+    "columns": [
+      {
+        "title": "Hakkımızda",
+        "links": [
+          { "label": "Hakkımızda", "href": "#hakkinda" },
+          { "label": "Kalite ve Emniyet", "href": "#" },
+          { "label": "Sosyal Sorumluluk", "href": "#" },
+          { "label": "Yatırımcı İlişkileri", "href": "#" },
+          { "label": "Etik İlkeler", "href": "#" }
+        ]
+      },
+      {
+        "title": "Hizmetler",
+        "links": [
+          { "label": "Yer Hizmetleri", "href": "#hizmetler" },
+          { "label": "Kargo ve Antrepo", "href": "#hizmetler" },
+          { "label": "Genel Havacılık", "href": "#hizmetler" },
+          { "label": "VIP Lounge", "href": "#hizmetler" },
+          { "label": "Teknik Hizmetler", "href": "#hizmetler" }
+        ]
+      },
+      {
+        "title": "Medya",
+        "links": [
+          { "label": "Haberler", "href": "#haberler" },
+          { "label": "Etkinlikler", "href": "#" },
+          { "label": "Kurumsal İletişim", "href": "#iletisim" }
+        ]
+      },
+      {
+        "title": "Kariyer",
+        "links": [
+          { "label": "IK Politikaları", "href": "/kariyer" },
+          { "label": "Çelebi Akademi", "href": "/kariyer" },
+          { "label": "Açık Pozisyonlar", "href": "/kariyer" }
+        ]
+      }
+    ]
   }
 }

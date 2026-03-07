@@ -18,12 +18,12 @@
         <div>
           <div class="flex items-center gap-3 mb-4">
             <span class="h-px w-0 bg-brand" ref="svcLineRef" />
-            <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Hizmetler</span>
+            <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">{{ t('services.label') }}</span>
           </div>
-          <h2 class="text-[56px] font-bold text-white tracking-[-2px]">Ne Yapıyoruz</h2>
+          <h2 class="text-[56px] font-bold text-white tracking-[-2px]">{{ t('services.title') }}</h2>
         </div>
         <p class="text-white/40 text-base leading-7 text-right hidden lg:block">
-          Havacılığın her noktasında<br />kusursuz çözümler sunuyoruz.
+          {{ t('services.subtitle') }}
         </p>
       </div>
 
@@ -84,7 +84,7 @@
             :class="i === 0 ? 'w-8 bg-brand' : 'w-4 bg-white/20'"
           />
         </div>
-        <span class="text-white/30 text-xs tracking-[1px]">{{ services.length }} hizmet</span>
+        <span class="text-white/30 text-xs tracking-[1px]">{{ services.length }} {{ t('services.label').toLowerCase() }}</span>
       </div>
     </div>
   </section>
@@ -100,48 +100,24 @@ const trackRef = ref<HTMLElement>()
 const headerRef = ref<HTMLElement>()
 const svcLineRef = ref<HTMLElement>()
 
-const services = [
-  {
-    id: 1,
-    num: '01',
-    title: 'Yer Hizmetleri',
-    desc: 'Uçak yolcu ve bagaj operasyonları, apron hizmetleri ve yer ekipman desteği.',
-    image:
+const { tm, t } = useI18n()
+
+const services = computed(() => {
+  const items = tm('services.items') as Array<{ title: string; desc: string }>
+  return items.map((item, i) => ({
+    id: i + 1,
+    num: String(i + 1).padStart(2, '0'),
+    title: item.title,
+    desc: item.desc,
+    image: [
       'https://images.unsplash.com/photo-1610908609985-3079199f3f60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
-  },
-  {
-    id: 2,
-    num: '02',
-    title: 'Kargo & Lojistik',
-    desc: 'Hava kargo depolama, elleçleme ve uluslararası lojistik çözümleri.',
-    image:
       'https://images.unsplash.com/photo-1610289472363-8659447c9d29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
-  },
-  {
-    id: 3,
-    num: '03',
-    title: 'Genel Havacılık',
-    desc: 'Özel uçak, helikopter ve VIP operasyonları için kapsamlı FBO hizmetleri.',
-    image:
       'https://images.unsplash.com/photo-1700811476970-2b42838f5f09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
-  },
-  {
-    id: 4,
-    num: '04',
-    title: 'Lounge & Platinum',
-    desc: 'Dünyanın en seçkin havalimanlarında premium yolcu deneyimi ve VIP bekleme salonları.',
-    image:
       'https://images.unsplash.com/photo-1759462692380-08be88ad26f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
-  },
-  {
-    id: 5,
-    num: '05',
-    title: 'Teknik Hizmetler',
-    desc: 'Uçak bakım, onarım ve revizyon hizmetleri ile teknik destek.',
-    image:
       'https://images.unsplash.com/photo-1728134960580-eadd36183dae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
-  },
-]
+    ][i],
+  }))
+})
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)

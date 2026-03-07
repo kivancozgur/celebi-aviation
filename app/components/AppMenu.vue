@@ -39,21 +39,23 @@
 </template>
 
 <script setup lang="ts">
-import { watch, onMounted, onUnmounted, ref } from 'vue'
+import { watch, onMounted, onUnmounted, ref, computed } from 'vue'
 import { gsap } from 'gsap'
 
 const props = defineProps<{ open: boolean }>()
 const emit = defineEmits(['close'])
 
+const { t } = useI18n()
+
 const menuRef = ref<HTMLElement | null>(null)
 const linksRef = ref<HTMLElement[]>([])
 
-const menuLinks = [
-  { label: 'Hizmetler', href: '#hizmetler' },
-  { label: 'Uçak Filosu', href: '#ucak-filosu' },
-  { label: 'Hakkında', href: '#hakkinda' },
-  { label: 'İletişim', href: '#iletisim' },
-]
+const menuLinks = computed(() => [
+  { label: t('nav.services'), href: '#services' },
+  { label: t('nav.aircraft'), href: '#aircraft' },
+  { label: t('nav.about'), href: '#about' },
+  { label: t('nav.contact'), href: '#contact' },
+])
 
 watch(
   () => props.open,

@@ -1,7 +1,7 @@
 <template>
-  <section id="about" ref="aboutRef" class="bg-dark py-[120px] px-20">
+  <section id="about" ref="aboutRef" class="bg-dark py-[120px] px-6 md:px-12 lg:px-20">
     <!-- Top: Title + Description -->
-    <div class="flex items-start justify-between mb-20 gap-20">
+    <div class="flex flex-col md:flex-row items-start justify-between mb-20 gap-10 md:gap-20">
       <!-- Left: Label + Title -->
       <div ref="aboutLeftRef" class="opacity-0 translate-y-16">
         <div class="flex items-center gap-3 mb-6">
@@ -25,9 +25,9 @@
       <!-- Right: Description + CTA -->
       <div ref="aboutRightRef" class="max-w-md pt-4 opacity-0 translate-x-12">
         <p class="text-white/50 text-[17px] leading-[1.8] mb-8">
-          1958'den bu yana havaciligin kalbinde yer alan Celebi, dunya standartlarinda hizmet
-          kalitesiyle sektore yon veriyor. Cesaret ve pragmatizmi birlestiren yaklasimimizla,
-          her havalimaninda fark yaratiyoruz.
+          1958'den bu yana havacılığın kalbinde yer alan Çelebi, dünya standartlarında hizmet
+          kalitesiyle sektöre yön veriyor. Cesaret ve pragmatizmi birleştiren yaklaşımımızla,
+          her havalimanında fark yaratıyoruz.
         </p>
         <a
           href="#contact"
@@ -65,7 +65,7 @@
     />
 
     <!-- Stats row -->
-    <div ref="statsRowRef" class="flex items-start justify-between">
+    <div ref="statsRowRef" class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-0">
       <div
         v-for="stat in stats"
         :key="stat.label"
@@ -94,7 +94,7 @@ const aboutLineRef = ref<HTMLElement>()
 const dividerRef = ref<HTMLElement>()
 const statsRowRef = ref<HTMLElement>()
 
-const aboutTitleWords = ['Vizondan', 'Uygulamaya.']
+const aboutTitleWords = ['Vizyondan', 'Uygulamaya.']
 const aboutWordRefs: HTMLElement[] = []
 const statRefs: Record<string, HTMLElement> = {}
 
@@ -107,10 +107,10 @@ function setStatRef(el: HTMLElement | null, label: string) {
 }
 
 const stats = [
-  { label: 'Kurulus Yili', display: '1958', end: 1958, from: 1940, accent: false, suffix: '' },
-  { label: 'Havalimani', display: '60+', end: 60, from: 0, accent: true, suffix: '+' },
-  { label: 'Calisan', display: '10K+', end: 10, from: 0, accent: false, suffix: 'K+' },
-  { label: 'Ulke', display: '4', end: 4, from: 0, accent: true, suffix: '' },
+  { label: 'Kuruluş Yılı', display: '1958', end: 1958, from: 1940, accent: false, suffix: '' },
+  { label: 'Havalimanı', display: '60+', end: 60, from: 0, accent: true, suffix: '+' },
+  { label: 'Çalışan', display: '10K+', end: 10, from: 0, accent: false, suffix: 'K+' },
+  { label: 'Ülke', display: '4', end: 4, from: 0, accent: true, suffix: '' },
 ]
 
 onMounted(() => {
@@ -181,7 +181,7 @@ onMounted(() => {
     const obj = { val: stat.from }
     gsap.to(obj, {
       val: stat.end,
-      duration: stat.label === 'Kurulus Yili' ? 1.5 : 1.8,
+      duration: stat.label === 'Kuruluş Yılı' ? 1.5 : 1.8,
       ease: 'power2.out',
       scrollTrigger: {
         trigger: statsRowRef.value,

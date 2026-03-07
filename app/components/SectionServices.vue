@@ -13,27 +13,27 @@
       <!-- Section header -->
       <div
         ref="headerRef"
-        class="px-20 mb-14 flex items-end justify-between opacity-0 translate-y-12"
+        class="px-6 md:px-12 lg:px-20 mb-14 flex items-end justify-between opacity-0 translate-y-12"
       >
         <div>
           <div class="flex items-center gap-3 mb-4">
             <span class="h-px w-0 bg-brand" ref="svcLineRef" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Hizmetler</span>
           </div>
-          <h2 class="text-[56px] font-bold text-white tracking-[-2px]">Ne Yapiyoruz</h2>
+          <h2 class="text-[56px] font-bold text-white tracking-[-2px]">Ne Yapıyoruz</h2>
         </div>
         <p class="text-white/40 text-base leading-7 text-right hidden lg:block">
-          Havaciligin her noktasinda<br />kusursuz cozumler sunuyoruz.
+          Havacılığın her noktasında<br />kusursuz çözümler sunuyoruz.
         </p>
       </div>
 
       <!-- Horizontal cards track -->
-      <div class="overflow-visible pl-20 pr-0">
+      <div class="overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide pl-6 md:pl-20 pr-0" style="-webkit-overflow-scrolling: touch;">
         <div ref="trackRef" class="flex gap-5 w-max will-change-transform">
           <article
             v-for="card in services"
             :key="card.id"
-            class="service-card group flex-none w-[380px] h-[500px] relative rounded-2xl overflow-hidden cursor-pointer"
+            class="service-card snap-start group flex-none w-[300px] sm:w-[340px] md:w-[380px] h-[500px] relative rounded-2xl overflow-hidden cursor-pointer"
           >
             <!-- Image -->
             <img
@@ -75,7 +75,7 @@
       </div>
 
       <!-- Progress indicator -->
-      <div class="px-20 mt-10 flex items-center gap-4">
+      <div class="px-6 md:px-20 mt-10 flex items-center gap-4">
         <div class="flex gap-2">
           <span
             v-for="(_, i) in services"
@@ -105,7 +105,7 @@ const services = [
     id: 1,
     num: '01',
     title: 'Yer Hizmetleri',
-    desc: 'Ucak yolcu ve bagaj operasyonlari, apron hizmetleri ve yer ekipman destegi.',
+    desc: 'Uçak yolcu ve bagaj operasyonları, apron hizmetleri ve yer ekipman desteği.',
     image:
       'https://images.unsplash.com/photo-1610908609985-3079199f3f60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
   },
@@ -113,15 +113,15 @@ const services = [
     id: 2,
     num: '02',
     title: 'Kargo & Lojistik',
-    desc: 'Hava kargo depolama, elleçleme ve uluslararasi lojistik cozumleri.',
+    desc: 'Hava kargo depolama, elleçleme ve uluslararası lojistik çözümleri.',
     image:
       'https://images.unsplash.com/photo-1610289472363-8659447c9d29?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
   },
   {
     id: 3,
     num: '03',
-    title: 'Genel Havacilik',
-    desc: 'Ozel ucak, helikopter ve VIP operasyonlari icin kapsamli FBO hizmetleri.',
+    title: 'Genel Havacılık',
+    desc: 'Özel uçak, helikopter ve VIP operasyonları için kapsamlı FBO hizmetleri.',
     image:
       'https://images.unsplash.com/photo-1700811476970-2b42838f5f09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
   },
@@ -129,7 +129,7 @@ const services = [
     id: 4,
     num: '04',
     title: 'Lounge & Platinum',
-    desc: 'Dunyanin en seckin havalimanlarinda premium yolcu deneyimi ve VIP bekleme salonlari.',
+    desc: 'Dünyanın en seçkin havalimanlarında premium yolcu deneyimi ve VIP bekleme salonları.',
     image:
       'https://images.unsplash.com/photo-1759462692380-08be88ad26f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
   },
@@ -137,7 +137,7 @@ const services = [
     id: 5,
     num: '05',
     title: 'Teknik Hizmetler',
-    desc: 'Ucak bakım, onarim ve revizyon hizmetleri ile teknik destek.',
+    desc: 'Uçak bakım, onarım ve revizyon hizmetleri ile teknik destek.',
     image:
       'https://images.unsplash.com/photo-1728134960580-eadd36183dae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800&q=80',
   },

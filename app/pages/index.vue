@@ -1,8 +1,8 @@
 <template>
   <main class="bg-white min-h-screen font-inter">
-    <AppNav @menu="menuOpen = !menuOpen" />
     <SectionHero />
     <SectionStats />
+    <SectionGlobalMap />
     <SectionAbout />
     <SectionAircraft />
     <SectionNews />
@@ -10,7 +10,6 @@
     <SectionContact />
 
     <!-- Mobile menu overlay -->
-    <AppMenu :open="menuOpen" @close="menuOpen = false" />
   </main>
 </template>
 
@@ -25,6 +24,4 @@ useHead({
     },
   ],
 })
-
-const menuOpen = ref(false)
 </script>

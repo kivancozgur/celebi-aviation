@@ -1,0 +1,94 @@
+{
+  "countries": [
+    {
+      "id": "turkey", "code": "tr",
+      "label": { "tr": "TÜRKİYE", "en": "TURKEY" },
+      "stats": {
+        "tr": [{"value":"32","label":"İstasyon"},{"value":"126.777","label":"Uçuş"},{"value":"100.706","label":"Ton Kargo"},{"value":"3.634","label":"Personel"}],
+        "en": [{"value":"32","label":"Stations"},{"value":"126,777","label":"Flights"},{"value":"100,706","label":"Ton Cargo"},{"value":"3,634","label":"Staff"}]
+      },
+      "airports": [
+        {"name":"Adana Şakirpaşa Hava Limanı","iata":"ADA","lat":36.9822,"lng":35.2804},
+        {"name":"Adıyaman Hava Limanı","iata":"ADF","lat":37.7314,"lng":38.4689},
+        {"name":"Ağrı Hava Limanı","iata":"AJI","lat":39.6546,"lng":43.0260},
+        {"name":"Antalya Hava Limanı","iata":"AYT","lat":36.8987,"lng":30.8005},
+        {"name":"Balıkesir Körfez Hava Limanı","iata":"EDO","lat":39.5546,"lng":27.0138},
+        {"name":"Bursa Yenişehir Hava Limanı","iata":"YEI","lat":40.2552,"lng":29.5626},
+        {"name":"Batman Hava Limanı","iata":"BAL","lat":37.9290,"lng":41.1166},
+        {"name":"Bingöl Çeltiksuyu Hava Limanı","iata":"BGG","lat":38.8593,"lng":40.5960},
+        {"name":"Çanakkale Hava Limanı","iata":"CKZ","lat":40.1377,"lng":26.4268}
+      ],
+      "bbox": {"minLng":24.44,"maxLng":45.35,"minLat":36.34,"maxLat":42.05}
+    },
+    {
+      "id": "india", "code": "in",
+      "label": { "tr": "HİNDİSTAN", "en": "INDIA" },
+      "stats": {
+        "tr": [{"value":"8","label":"İstasyon"},{"value":"58.000","label":"Uçuş"},{"value":"540.000","label":"Ton Kargo"},{"value":"7.800","label":"Personel"}],
+        "en": [{"value":"8","label":"Stations"},{"value":"58,000","label":"Flights"},{"value":"540,000","label":"Ton Cargo"},{"value":"7,800","label":"Staff"}]
+      },
+      "airports": [
+        {"name":"Hyderabad Rajiv Gandhi Int'l Airport","iata":"HYD","lat":17.2313,"lng":78.4298,"phone":"+91 7827969862"},
+        {"name":"Ahmedabad Sardar Vallabhbhai Patel Int'l Airport","iata":"AMD","lat":23.0772,"lng":72.6347},
+        {"name":"Bangalore Kempegowda Int'l Airport","iata":"BLR","lat":13.1986,"lng":77.7066},
+        {"name":"Chennai International Airport","iata":"MAA","lat":12.9900,"lng":80.1693},
+        {"name":"Delhi Indira Gandhi Int'l Airport","iata":"DEL","lat":28.5562,"lng":77.1000},
+        {"name":"Kolkata Netaji Subhas Chandra Bose Int'l Airport","iata":"CCU","lat":22.6547,"lng":88.4467},
+        {"name":"Mumbai Chhatrapati Shivaji Maharaj Int'l Airport","iata":"BOM","lat":19.0896,"lng":72.8656},
+        {"name":"Pune Airport","iata":"PNQ","lat":18.5822,"lng":73.9197}
+      ],
+      "bbox": {"minLng":65.25,"maxLng":99.49,"minLat":10.01,"maxLat":39.31}
+    },
+    {
+      "id": "germany", "code": "de",
+      "label": { "tr": "ALMANYA", "en": "GERMANY" },
+      "stats": {
+        "tr": [{"value":"1","label":"İstasyon"},{"value":"21.000","label":"Uçuş"},{"value":"206.200","label":"Ton Kargo"},{"value":"180","label":"Personel"}],
+        "en": [{"value":"1","label":"Station"},{"value":"21,000","label":"Flights"},{"value":"206,200","label":"Ton Cargo"},{"value":"180","label":"Staff"}]
+      },
+      "airports": [
+        {"name":"Frankfurt Cargo GmbH — Frankfurt Airport","iata":"FRA","lat":50.0379,"lng":8.5622,"phone":"+49 (0)69-69 800 9-10"}
+      ],
+      "bbox": {"minLng":4.85,"maxLng":15.44,"minLat":46.67,"maxLat":55.92}
+    },
+    {
+      "id": "hungary", "code": "hu",
+      "label": { "tr": "MACARİSTAN", "en": "HUNGARY" },
+      "stats": {
+        "tr": [{"value":"1","label":"İstasyon"},{"value":"24.500","label":"Uçuş"},{"value":"90.000","label":"Ton Kargo"},{"value":"800","label":"Personel"}],
+        "en": [{"value":"1","label":"Station"},{"value":"24,500","label":"Flights"},{"value":"90,000","label":"Ton Cargo"},{"value":"800","label":"Staff"}]
+      },
+      "airports": [
+        {"name":"Budapest Ferenc Liszt International Airport","iata":"BUD","lat":47.4298,"lng":19.2611,"phone":"+36 70 332 4011"}
+      ],
+      "bbox": {"minLng":16.25,"maxLng":23.30,"minLat":45.83,"maxLat":48.46}
+    },
+    {
+      "id": "tanzania", "code": "tz",
+      "label": { "tr": "TANZANYA", "en": "TANZANIA" },
+      "stats": {
+        "tr": [{"value":"1","label":"İstasyon"}],
+        "en": [{"value":"1","label":"Station"}]
+      },
+      "airports": [
+        {"name":"Julius Nyerere International Airport","iata":"DAR","lat":-6.8781,"lng":39.2026}
+      ],
+      "bbox": {"minLng":29.01,"maxLng":40.43,"minLat":-12.52,"maxLat":0.33}
+    },
+    {
+      "id": "indonesia", "code": "id",
+      "label": { "tr": "ENDONEZYA", "en": "INDONESIA" },
+      "stats": {
+        "tr": [{"value":"26","label":"İstasyon"},{"value":"39.435","label":"Uçuş"},{"value":"1.000+","label":"Personel"},{"value":"40+","label":"Müşteri"}],
+        "en": [{"value":"26","label":"Stations"},{"value":"39,435","label":"Flights"},{"value":"1,000+","label":"Staff"},{"value":"40+","label":"Customers"}]
+      },
+      "airports": [
+        {"name":"Balikpapan Sultan Aji Muhammad Sulaiman Sepinggan Airport","iata":"BPN","lat":-1.2683,"lng":116.8942,"phone":"+62 815-8528-0331"},
+        {"name":"Bali Ngurah Rai International Airport","iata":"DPS","lat":-8.7482,"lng":115.1671},
+        {"name":"Jakarta Soekarno-Hatta International Airport","iata":"CGK","lat":-6.1256,"lng":106.6558},
+        {"name":"Surabaya Juanda International Airport","iata":"SUB","lat":-7.3798,"lng":112.7866}
+      ],
+      "bbox": {"minLng":89.84,"maxLng":147.0,"minLat":-12.05,"maxLat":7.26}
+    }
+  ]
+}

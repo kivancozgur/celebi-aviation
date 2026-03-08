@@ -1,9 +1,8 @@
 <template>
-  <div class="bg-[#0A0A0A] min-h-screen text-white font-inter">
-    <AppNav />
-    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/5">
+  <div class="bg-white min-h-screen text-gray-900 font-inter">
+    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-gray-100">
       <div class="max-w-screen-xl mx-auto">
-        <NuxtLink to="/" class="inline-flex items-center gap-2 text-white/40 text-sm hover:text-white transition-colors duration-300 mb-10 group">
+        <NuxtLink to="/" class="inline-flex items-center gap-2 text-gray-400 text-sm hover:text-gray-900 transition-colors duration-300 mb-10 group">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
           <span class="relative">Ana Sayfa<span class="absolute bottom-0 left-0 h-px w-0 bg-brand transition-all duration-300 group-hover:w-full" /></span>
         </NuxtLink>
@@ -11,10 +10,10 @@
           <span class="h-px w-10 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Politikalar</span>
         </div>
-        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-white leading-tight tracking-tight max-w-3xl">
+        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-gray-900 leading-tight tracking-tight max-w-3xl">
           Bilgi Güvenliği Politikası
         </h1>
-        <p class="text-white/50 text-lg leading-relaxed mt-6 max-w-2xl">
+        <p class="text-gray-500 text-lg leading-relaxed mt-6 max-w-2xl">
           ISO 27001 sertifikalı Bilgi Güvenliği Yönetim Sistemi çerçevesinde veri güvenliği taahhütlerimiz.
         </p>
       </div>
@@ -26,28 +25,28 @@
           <div class="text-brand">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <p class="text-white/70 text-sm">ISO 27001 Bilgi Güvenliği Yönetim Sistemi Sertifikalı</p>
+          <p class="text-gray-600 text-sm">ISO 27001 Bilgi Güvenliği Yönetim Sistemi Sertifikalı</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <div
             v-for="policy in policies"
             :key="policy.title"
-            class="bg-white/[0.03] border border-white/8 rounded-2xl p-8 hover:border-brand/30 transition-all duration-300"
+            class="bg-gray-50 border border-gray-200 rounded-2xl p-8 hover:border-brand/30 transition-all duration-300"
           >
             <div class="text-brand mb-4">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path :d="policy.iconPath" />
               </svg>
             </div>
-            <h3 class="text-white font-bold text-base mb-3">{{ policy.title }}</h3>
-            <p class="text-white/45 text-sm leading-relaxed">{{ policy.desc }}</p>
+            <h3 class="text-gray-900 font-bold text-base mb-3">{{ policy.title }}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{{ policy.desc }}</p>
           </div>
         </div>
 
         <!-- Uyarı -->
-        <div class="mt-12 p-6 bg-white/[0.02] border border-white/5 rounded-xl">
-          <p class="text-white/35 text-sm leading-relaxed">
+        <div class="mt-12 p-6 bg-white/[0.02] border border-gray-100 rounded-xl">
+          <p class="text-gray-400 text-sm leading-relaxed">
             Bu politikaya aykırı davranışlar, şirket disiplin prosedürleri ve ilgili yasal mevzuat kapsamında değerlendirilir. Tüm çalışanlarımız bu politikayı okuyup kabul etmekle yükümlüdür.
           </p>
         </div>

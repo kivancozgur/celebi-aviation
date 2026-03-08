@@ -1,116 +1,117 @@
 <template>
-  <nav
-    ref="navRef"
-    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 lg:px-20 h-20"
-    :class="{ 'nav-scrolled': isScrolled }"
-  >
-    <!-- Logo -->
-    <NuxtLink to="/" class="flex items-center gap-2 group">
-      <img
-        src="https://www.celebiaviation.com/themes/custom/celebi/logo.svg"
-        alt="Celebi Aviation"
-        class="h-8 w-auto transition-all duration-300"
-        :class="isScrolled ? '' : 'brightness-0 invert'"
-      />
-    </NuxtLink>
+  <nav ref="navRef" class="nav-root fixed top-0 left-0 right-0 z-50">
+    <!-- Top utility bar -->
+    <div class="utility-bar hidden md:flex items-center justify-end gap-6 px-8 lg:px-20 h-9 border-b border-gray-100 text-[11px] text-gray-400 tracking-wide overflow-hidden">
+      <a href="#" class="hover:text-brand transition-colors flex items-center gap-1.5">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        {{ $t('nav.lostItem') }}
+      </a>
+      <span class="w-px h-3 bg-gray-200" />
+      <a href="#" class="hover:text-brand transition-colors flex items-center gap-1.5">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+        </svg>
+        {{ $t('nav.cargoTracking') }}
+      </a>
+      <span class="w-px h-3 bg-gray-200" />
+      <div class="flex items-center gap-1 font-medium tracking-[1.5px]">
+        <button @click="setLocale('tr')" :class="locale === 'tr' ? 'text-gray-900' : 'text-gray-300'" class="transition-colors cursor-pointer hover:text-gray-900">TR</button>
+        <span class="text-gray-200">/</span>
+        <button @click="setLocale('en')" :class="locale === 'en' ? 'text-gray-900' : 'text-gray-300'" class="transition-colors cursor-pointer hover:text-gray-900">EN</button>
+      </div>
+    </div>
 
-    <!-- Nav Links -->
-    <ul class="hidden md:flex items-center gap-8">
-      <li v-for="link in links" :key="link.key" class="relative group">
-        <NuxtLink
-          :to="link.to"
-          class="nav-link text-[13px] tracking-[0.5px] transition-colors duration-300 flex items-center gap-1"
-          :class="isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/85 hover:text-white'"
+    <!-- Main nav bar -->
+    <div class="main-bar flex items-center justify-between px-6 md:px-8 lg:px-20 h-16 bg-white border-b border-gray-100">
+      <!-- Logo -->
+      <NuxtLink to="/" class="flex-none">
+        <img
+          src="https://www.celebiaviation.com/themes/custom/celebi/logo.svg"
+          alt="Celebi Aviation"
+          class="h-7 w-auto"
+        />
+      </NuxtLink>
+
+      <!-- Desktop links -->
+      <ul class="hidden lg:flex items-center h-full">
+        <li
+          v-for="link in links"
+          :key="link.key"
+          class="relative h-full flex items-center group"
         >
-          {{ $t(link.key) }}
-          <svg v-if="link.children" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="opacity-60 group-hover:rotate-180 transition-transform duration-200">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
-        </NuxtLink>
-        <!-- Dropdown -->
-        <div
-          v-if="link.children"
-          class="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
-        >
-          <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[200px]">
-            <NuxtLink
-              v-for="child in link.children"
-              :key="child.to"
-              :to="child.to"
-              class="block px-4 py-2.5 text-[13px] text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
-            >
-              {{ $t(child.key) }}
-            </NuxtLink>
+          <NuxtLink
+            :to="link.to"
+            class="flex items-center gap-1 px-4 h-full text-[13px] font-medium text-gray-600 hover:text-gray-900 transition-colors relative"
+            active-class="text-gray-900"
+          >
+            {{ $t(link.key) }}
+            <svg v-if="link.children" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="mt-px opacity-40 group-hover:opacity-80 group-hover:translate-y-px transition-all duration-150">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+            <!-- active indicator -->
+            <span class="absolute bottom-0 left-4 right-4 h-[2px] bg-brand scale-x-0 group-[.router-link-active]:scale-x-100 transition-transform duration-200 origin-left" />
+          </NuxtLink>
+
+          <!-- Dropdown -->
+          <div
+            v-if="link.children"
+            class="dropdown-panel absolute top-full left-0 pt-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 -translate-y-1 transition-all duration-200"
+          >
+            <div class="bg-white rounded-xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 py-2 min-w-[220px]">
+              <NuxtLink
+                v-for="child in link.children"
+                :key="child.to"
+                :to="child.to"
+                class="flex items-center gap-2.5 px-4 py-2.5 text-[13px] text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors group/item"
+                active-class="text-brand bg-blue-50/60"
+              >
+                <span class="w-1 h-1 rounded-full bg-gray-300 group-hover/item:bg-brand transition-colors flex-none" />
+                {{ $t(child.key) }}
+              </NuxtLink>
+            </div>
           </div>
+        </li>
+      </ul>
+
+      <!-- Right actions -->
+      <div class="flex items-center gap-3">
+        <!-- Mobile lang -->
+        <div class="flex lg:hidden items-center gap-1 text-[11px] font-medium tracking-[1.5px] text-gray-400">
+          <button @click="setLocale('tr')" :class="locale === 'tr' ? 'text-gray-900' : ''" class="transition-colors cursor-pointer">TR</button>
+          <span class="text-gray-200">/</span>
+          <button @click="setLocale('en')" :class="locale === 'en' ? 'text-gray-900' : ''" class="transition-colors cursor-pointer">EN</button>
         </div>
-      </li>
-    </ul>
 
-    <!-- Right Side -->
-    <div class="flex items-center gap-6">
-      <!-- Utility links -->
-      <div
-        class="hidden md:flex items-center gap-5 mr-4 pr-5 border-r transition-colors duration-300"
-        :class="isScrolled ? 'border-gray-200' : 'border-white/20'"
-      >
-        <!-- Kayıp Eşya Takibi -->
-        <a
-          href="#"
-          class="flex items-center gap-1.5 text-xs tracking-wide transition-colors group"
-          :class="isScrolled ? 'text-gray-400 hover:text-gray-700' : 'text-white/60 hover:text-white'"
+        <!-- CTA button (desktop) -->
+        <NuxtLink
+          to="/iletisim"
+          class="hidden lg:inline-flex items-center gap-2 bg-brand text-white text-[12px] font-semibold tracking-wide px-4 py-2 rounded-lg hover:bg-brand/90 transition-colors"
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-            <circle cx="12" cy="10" r="3"/>
-          </svg>
-          <span class="hidden lg:inline">{{ $t('nav.lostItem') }}</span>
-        </a>
-        <!-- Kargo Takibi -->
-        <a
-          href="#"
-          class="flex items-center gap-1.5 text-xs tracking-wide transition-colors group"
-          :class="isScrolled ? 'text-gray-400 hover:text-gray-700' : 'text-white/60 hover:text-white'"
+          {{ $t('menu.contact') }}
+        </NuxtLink>
+
+        <!-- Hamburger -->
+        <button
+          class="flex flex-col justify-center gap-[5px] w-9 h-9 cursor-pointer group"
+          aria-label="Menu"
+          @click="$emit('menu')"
         >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-          </svg>
-          <span class="hidden lg:inline">{{ $t('nav.cargoTracking') }}</span>
-        </a>
+          <span class="w-5 h-[1.5px] bg-gray-700 transition-all duration-300 group-hover:w-6" />
+          <span class="w-6 h-[1.5px] bg-gray-700 transition-all duration-300 group-hover:w-5" />
+        </button>
       </div>
-
-      <!-- Language switcher -->
-      <div
-        class="text-xs font-medium tracking-[1px] hidden md:flex items-center gap-1 transition-colors duration-300"
-        :class="isScrolled ? 'text-gray-700' : 'text-white'"
-      >
-        <button @click="setLocale('tr')" :class="locale === 'tr' ? 'opacity-100' : 'opacity-40'" class="transition-opacity duration-200 cursor-pointer">TR</button>
-        <span class="opacity-30">/</span>
-        <button @click="setLocale('en')" :class="locale === 'en' ? 'opacity-100' : 'opacity-40'" class="transition-opacity duration-200 cursor-pointer">EN</button>
-      </div>
-
-      <!-- Hamburger -->
-      <button
-        class="flex flex-col gap-[6px] group cursor-pointer"
-        aria-label="Menu"
-        @click="$emit('menu')"
-      >
-        <span class="w-7 h-[2px] transition-all duration-300 group-hover:w-5" :class="isScrolled ? 'bg-gray-800' : 'bg-white'" />
-        <span class="w-5 h-[2px] transition-all duration-300 group-hover:w-7" :class="isScrolled ? 'bg-gray-800' : 'bg-white'" />
-      </button>
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 defineEmits<{ menu: [] }>()
 
 const { locale, setLocale } = useI18n()
-
 const navRef = ref<HTMLElement>()
-const isScrolled = ref(false)
 
 const links = [
   {
@@ -143,6 +144,7 @@ const links = [
       { key: 'menu.news', to: '/haberler' },
       { key: 'menu.announcements', to: '/duyurular' },
       { key: 'menu.events', to: '/etkinlikler' },
+      { key: 'menu.corpcomm', to: '/kurumsal-iletisim' },
     ],
   },
   {
@@ -151,42 +153,35 @@ const links = [
     children: [
       { key: 'menu.career', to: '/kariyer' },
       { key: 'menu.openpos', to: '/acik-pozisyonlar' },
+      { key: 'menu.hrpolicy', to: '/ik-politikalari' },
       { key: 'menu.academy', to: '/celebi-akademi' },
     ],
   },
-  { key: 'menu.contact', to: '/iletisim' },
 ]
 
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger)
-
-  // Entrance animation
-  gsap.from(navRef.value!, {
-    y: -80,
-    opacity: 0,
-    duration: 1.2,
-    ease: 'power3.out',
-    delay: 0.3,
-  })
-
-  // Nav background on scroll
-  ScrollTrigger.create({
-    start: 100,
-    onEnter: () => (isScrolled.value = true),
-    onLeaveBack: () => (isScrolled.value = false),
+  if (!navRef.value) return
+  import('gsap').then(({ gsap }) => {
+    gsap.from(navRef.value, {
+      y: -60,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+    })
   })
 })
 </script>
 
 <style scoped>
-nav {
-  transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%);
+.nav-root {
+  font-family: inherit;
 }
 
-nav.nav-scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+.utility-bar {
+  transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdown-panel {
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.06));
 }
 </style>

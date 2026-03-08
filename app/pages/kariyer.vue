@@ -1,13 +1,12 @@
 <template>
-  <div class="bg-[#0A0A0A] min-h-screen text-white font-inter">
-    <AppNav />
+  <div class="bg-white min-h-screen text-gray-900 font-inter">
 
     <!-- Page Header -->
-    <header class="pt-36 pb-16 px-6 md:px-12 lg:px-20 border-b border-white/5">
+    <header class="pt-36 pb-16 px-6 md:px-12 lg:px-20 border-b border-gray-100">
       <div class="max-w-screen-xl mx-auto">
         <NuxtLink
           to="/"
-          class="inline-flex items-center gap-2 text-white/40 text-sm hover:text-white transition-colors duration-300 mb-10 group"
+          class="inline-flex items-center gap-2 text-gray-400 text-sm hover:text-gray-900 transition-colors duration-300 mb-10 group"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -22,10 +21,10 @@
           <span class="h-px w-10 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Kariyer</span>
         </div>
-        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-white leading-tight tracking-tight">
+        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-gray-900 leading-tight tracking-tight">
           Kariyer Fırsatları
         </h1>
-        <p class="text-white/50 text-lg leading-relaxed mt-4 max-w-xl">
+        <p class="text-gray-500 text-lg leading-relaxed mt-4 max-w-xl">
           Çelebi Havacılık bünyesinde açık pozisyonları inceleyin ve ekibimizin bir parçası olun.
         </p>
       </div>
@@ -34,7 +33,7 @@
     <!-- Positions List -->
     <main class="py-16 px-6 md:px-12 lg:px-20">
       <div class="max-w-screen-xl mx-auto">
-        <p class="text-white/30 text-sm tracking-[1px] uppercase mb-8">
+        <p class="text-gray-400 text-sm tracking-[1px] uppercase mb-8">
           {{ positions.length }} açık pozisyon
         </p>
 
@@ -42,26 +41,26 @@
           <li
             v-for="position in positions"
             :key="position.title"
-            class="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-white/[0.03] border border-white/8 rounded-2xl px-7 py-6 hover:border-brand/30 hover:bg-white/[0.05] transition-all duration-300"
+            class="group flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-gray-50 border border-gray-200 rounded-2xl px-7 py-6 hover:border-brand/30 hover:bg-white/[0.05] transition-all duration-300"
           >
             <!-- Position info -->
             <div class="flex flex-col gap-3">
               <div class="flex items-center gap-3 flex-wrap">
-                <h2 class="text-white font-semibold text-lg">{{ position.title }}</h2>
+                <h2 class="text-gray-900 font-semibold text-lg">{{ position.title }}</h2>
                 <span class="text-brand text-[10px] font-medium tracking-[2px] uppercase bg-brand/10 border border-brand/20 rounded-full px-3 py-1">
                   {{ position.department }}
                 </span>
               </div>
               <div class="flex items-center gap-5 flex-wrap">
                 <!-- Location -->
-                <span class="flex items-center gap-1.5 text-white/40 text-sm">
+                <span class="flex items-center gap-1.5 text-gray-400 text-sm">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <path d="M7 1C4.79 1 3 2.79 3 5c0 3.25 4 8 4 8s4-4.75 4-8c0-2.21-1.79-4-4-4zm0 5.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3z" fill="currentColor" />
                   </svg>
                   {{ position.location }}
                 </span>
                 <!-- Type -->
-                <span class="flex items-center gap-1.5 text-white/40 text-sm">
+                <span class="flex items-center gap-1.5 text-gray-400 text-sm">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2" />
                     <path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
@@ -74,7 +73,7 @@
             <!-- CTA -->
             <a
               href="#"
-              class="flex-none inline-flex items-center gap-2 border border-white/15 hover:border-brand hover:text-brand text-white/70 text-sm font-medium px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap"
+              class="flex-none inline-flex items-center gap-2 border border-gray-200 hover:border-brand hover:text-brand text-gray-600 text-sm font-medium px-6 py-3 rounded-xl transition-all duration-300 whitespace-nowrap"
               :aria-label="`${position.title} pozisyonuna başvur`"
             >
               Başvur

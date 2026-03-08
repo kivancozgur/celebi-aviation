@@ -1,13 +1,12 @@
 <template>
-  <div class="bg-[#0A0A0A] min-h-screen text-white font-inter">
-    <AppNav />
+  <div class="bg-white min-h-screen text-gray-900 font-inter">
 
     <!-- Page Header -->
-    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/5">
+    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-gray-100">
       <div class="max-w-screen-xl mx-auto">
         <NuxtLink
           to="/"
-          class="inline-flex items-center gap-2 text-white/40 text-sm hover:text-white transition-colors duration-300 mb-10 group"
+          class="inline-flex items-center gap-2 text-gray-400 text-sm hover:text-gray-900 transition-colors duration-300 mb-10 group"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -22,10 +21,10 @@
           <span class="h-px w-10 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Hizmetler</span>
         </div>
-        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-white leading-tight tracking-tight max-w-3xl">
+        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-gray-900 leading-tight tracking-tight max-w-3xl">
           Yer Hizmetleri
         </h1>
-        <p class="text-white/50 text-lg leading-relaxed mt-6 max-w-2xl">
+        <p class="text-gray-500 text-lg leading-relaxed mt-6 max-w-2xl">
           Uçak operasyonlarından yolcu hizmetlerine kadar havalimanı operasyonlarının her adımında kusursuz destek.
         </p>
       </div>
@@ -40,20 +39,20 @@
             <div
               v-for="category in serviceCategories"
               :key="category.title"
-              class="bg-white/[0.03] border border-white/8 rounded-2xl p-10 hover:border-brand/30 transition-all duration-300 group"
+              class="bg-gray-50 border border-gray-200 rounded-2xl p-10 hover:border-brand/30 transition-all duration-300 group"
             >
               <div class="text-brand mb-6">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
                   <path :d="category.iconPath" />
                 </svg>
               </div>
-              <h2 class="text-white font-bold text-2xl mb-4 group-hover:text-brand transition-colors duration-300">{{ category.title }}</h2>
-              <p class="text-white/45 text-sm leading-relaxed mb-8">{{ category.desc }}</p>
+              <h2 class="text-gray-900 font-bold text-2xl mb-4 group-hover:text-brand transition-colors duration-300">{{ category.title }}</h2>
+              <p class="text-gray-500 text-sm leading-relaxed mb-8">{{ category.desc }}</p>
               <ul class="flex flex-col gap-3">
                 <li
                   v-for="item in category.items"
                   :key="item"
-                  class="flex items-start gap-3 text-white/60 text-sm"
+                  class="flex items-start gap-3 text-gray-500 text-sm"
                 >
                   <span class="mt-[5px] w-[5px] h-[5px] rounded-full bg-brand flex-none" />
                   {{ item }}
@@ -64,7 +63,7 @@
         </section>
 
         <!-- Why Celebi -->
-        <section class="py-16 border-t border-white/5">
+        <section class="py-16 border-t border-gray-100">
           <div class="flex items-center gap-3 mb-12">
             <span class="h-px w-10 bg-brand" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Neden Çelebi</span>
@@ -73,21 +72,21 @@
             <div
               v-for="feature in features"
               :key="feature.title"
-              class="py-8 border-t border-white/8 hover:border-brand/30 transition-colors duration-300"
+              class="py-8 border-t border-gray-200 hover:border-brand/30 transition-colors duration-300"
             >
               <div class="text-[clamp(2rem,4vw,3rem)] font-bold text-brand mb-3">{{ feature.stat }}</div>
-              <h3 class="text-white font-semibold text-base mb-2">{{ feature.title }}</h3>
-              <p class="text-white/40 text-sm leading-relaxed">{{ feature.desc }}</p>
+              <h3 class="text-gray-900 font-semibold text-base mb-2">{{ feature.title }}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">{{ feature.desc }}</p>
             </div>
           </div>
         </section>
 
         <!-- CTA -->
-        <section class="py-16 border-t border-white/5">
-          <div class="bg-white/[0.03] border border-white/8 rounded-2xl p-12 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <section class="py-16 border-t border-gray-100">
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-12 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-              <h2 class="text-white font-bold text-3xl md:text-4xl leading-tight mb-3">İşbirliği Yapalım</h2>
-              <p class="text-white/45 text-base leading-relaxed max-w-lg">Yer hizmetleri ihtiyaçlarınız için uzman ekibimizle iletişime geçin.</p>
+              <h2 class="text-gray-900 font-bold text-3xl md:text-4xl leading-tight mb-3">İşbirliği Yapalım</h2>
+              <p class="text-gray-500 text-base leading-relaxed max-w-lg">Yer hizmetleri ihtiyaçlarınız için uzman ekibimizle iletişime geçin.</p>
             </div>
             <NuxtLink
               to="/#contact"

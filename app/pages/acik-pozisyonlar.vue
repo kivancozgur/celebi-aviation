@@ -1,9 +1,8 @@
 <template>
-  <div class="bg-[#0A0A0A] min-h-screen text-white font-inter">
-    <AppNav />
-    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/5">
+  <div class="bg-white min-h-screen text-gray-900 font-inter">
+    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-gray-100">
       <div class="max-w-screen-xl mx-auto">
-        <NuxtLink to="/kariyer" class="inline-flex items-center gap-2 text-white/40 text-sm hover:text-white transition-colors duration-300 mb-10 group">
+        <NuxtLink to="/kariyer" class="inline-flex items-center gap-2 text-gray-400 text-sm hover:text-gray-900 transition-colors duration-300 mb-10 group">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
           <span class="relative">Kariyer<span class="absolute bottom-0 left-0 h-px w-0 bg-brand transition-all duration-300 group-hover:w-full" /></span>
         </NuxtLink>
@@ -11,10 +10,10 @@
           <span class="h-px w-10 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Kariyer</span>
         </div>
-        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-white leading-tight tracking-tight max-w-3xl">
+        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-gray-900 leading-tight tracking-tight max-w-3xl">
           Çelebi'de Hayatı Yaşamaya Katılın
         </h1>
-        <p class="text-white/50 text-lg leading-relaxed mt-6 max-w-2xl">
+        <p class="text-gray-500 text-lg leading-relaxed mt-6 max-w-2xl">
           Dünya genelinde havacılık sektörünün dinamik ortamında kariyer fırsatlarını keşfedin.
         </p>
       </div>
@@ -23,8 +22,8 @@
       <div class="max-w-screen-xl mx-auto py-20">
 
         <div class="bg-gradient-to-br from-brand/10 to-transparent border border-brand/20 rounded-2xl p-12 md:p-16 mb-16">
-          <h2 class="text-white font-bold text-3xl mb-4">Açık Pozisyonlar</h2>
-          <p class="text-white/60 text-base leading-relaxed max-w-2xl mb-8">
+          <h2 class="text-gray-900 font-bold text-3xl mb-4">Açık Pozisyonlar</h2>
+          <p class="text-gray-500 text-base leading-relaxed max-w-2xl mb-8">
             Çelebi Hava Servisi Türkiye operasyonu ve dünya genelindeki açık pozisyonlarımıza resmi kariyer portalımız üzerinden başvurabilirsiniz. Güncel ilanlar için aşağıdaki linki ziyaret edin.
           </p>
           <a
@@ -40,12 +39,12 @@
 
         <!-- Categories -->
         <div class="grid md:grid-cols-3 gap-6">
-          <div v-for="dept in departments" :key="dept.name" class="bg-white/[0.03] border border-white/8 rounded-2xl p-8 hover:border-brand/30 transition-all duration-300">
+          <div v-for="dept in departments" :key="dept.name" class="bg-gray-50 border border-gray-200 rounded-2xl p-8 hover:border-brand/30 transition-all duration-300">
             <div class="text-brand mb-4">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path :d="dept.icon" /></svg>
             </div>
-            <h3 class="text-white font-bold text-lg mb-2">{{ dept.name }}</h3>
-            <p class="text-white/40 text-sm leading-relaxed">{{ dept.desc }}</p>
+            <h3 class="text-gray-900 font-bold text-lg mb-2">{{ dept.name }}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{{ dept.desc }}</p>
           </div>
         </div>
 

@@ -1,13 +1,12 @@
 <template>
-  <div class="bg-[#0A0A0A] min-h-screen text-white font-inter">
-    <AppNav />
+  <div class="bg-white min-h-screen text-gray-900 font-inter">
 
     <!-- Page Header -->
-    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/5">
+    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-gray-100">
       <div class="max-w-screen-xl mx-auto">
         <NuxtLink
           to="/"
-          class="inline-flex items-center gap-2 text-white/40 text-sm hover:text-white transition-colors duration-300 mb-10 group"
+          class="inline-flex items-center gap-2 text-gray-400 text-sm hover:text-gray-900 transition-colors duration-300 mb-10 group"
         >
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -22,10 +21,10 @@
           <span class="h-px w-10 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Kurumsal</span>
         </div>
-        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-white leading-tight tracking-tight max-w-3xl">
+        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-gray-900 leading-tight tracking-tight max-w-3xl">
           1958'den Bu Yana Havacılığın Kalbinde
         </h1>
-        <p class="text-white/50 text-lg leading-relaxed mt-6 max-w-2xl">
+        <p class="text-gray-500 text-lg leading-relaxed mt-6 max-w-2xl">
           Çelebi Havacılık, dünya standartlarında hizmet kalitesiyle 6 ülkede, 70'ten fazla istasyonda, 15.000'i aşkın çalışanıyla havacılık sektörüne yön vermektedir.
         </p>
       </div>
@@ -35,25 +34,25 @@
       <div class="max-w-screen-xl mx-auto">
 
         <!-- Stats Grid -->
-        <section class="py-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden my-16">
-          <div v-for="stat in stats" :key="stat.label" class="bg-[#0A0A0A] flex flex-col items-center justify-center py-12 px-6 text-center">
+        <section class="py-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden my-16">
+          <div v-for="stat in stats" :key="stat.label" class="bg-white flex flex-col items-center justify-center py-12 px-6 text-center">
             <div class="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight text-brand leading-none mb-2">{{ stat.value }}</div>
-            <div class="text-white/40 text-sm tracking-[1px] uppercase">{{ stat.label }}</div>
+            <div class="text-gray-400 text-sm tracking-[1px] uppercase">{{ stat.label }}</div>
           </div>
         </section>
 
         <!-- Şirket Tanıtımı -->
-        <section class="py-16 grid md:grid-cols-2 gap-16 items-start border-t border-white/5">
+        <section class="py-16 grid md:grid-cols-2 gap-16 items-start border-t border-gray-100">
           <div>
             <div class="flex items-center gap-3 mb-6">
               <span class="h-px w-10 bg-brand" />
               <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Biz Kimiz</span>
             </div>
-            <h2 class="text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-white leading-tight tracking-tight mb-6">
+            <h2 class="text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-gray-900 leading-tight tracking-tight mb-6">
               3 Kıtada Güçlü Varlık
             </h2>
           </div>
-          <div class="text-white/55 text-[17px] leading-[1.9] space-y-4 pt-2">
+          <div class="text-gray-500 text-[17px] leading-[1.9] space-y-4 pt-2">
             <p>
               Çelebi Havacılık, 1958 yılında Türkiye'de kurulan ve bugün Avrupa, Asya ve Orta Doğu'da faaliyet gösteren global bir havacılık hizmetleri şirketidir.
             </p>
@@ -67,12 +66,12 @@
         </section>
 
         <!-- Kilometre Taşları -->
-        <section class="py-16 border-t border-white/5">
+        <section class="py-16 border-t border-gray-100">
           <div class="flex items-center gap-3 mb-12">
             <span class="h-px w-10 bg-brand" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Tarihimiz</span>
           </div>
-          <h2 class="text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-white leading-tight tracking-tight mb-14">
+          <h2 class="text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-gray-900 leading-tight tracking-tight mb-14">
             Kilometre Taşları
           </h2>
 
@@ -92,8 +91,8 @@
                 <div class="relative flex-1 pl-8 md:pl-12 pb-4">
                   <!-- Dot -->
                   <div class="absolute left-[-5px] top-[6px] w-[10px] h-[10px] rounded-full bg-brand" />
-                  <h3 class="text-white font-semibold text-base mb-1">{{ milestone.title }}</h3>
-                  <p class="text-white/45 text-sm leading-relaxed">{{ milestone.desc }}</p>
+                  <h3 class="text-gray-900 font-semibold text-base mb-1">{{ milestone.title }}</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed">{{ milestone.desc }}</p>
                 </div>
               </div>
             </div>
@@ -101,7 +100,7 @@
         </section>
 
         <!-- Misyon Vizyon Değerler -->
-        <section class="py-16 border-t border-white/5">
+        <section class="py-16 border-t border-gray-100">
           <div class="flex items-center gap-3 mb-12">
             <span class="h-px w-10 bg-brand" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">İlkelerimiz</span>
@@ -110,7 +109,7 @@
             <div
               v-for="item in values"
               :key="item.title"
-              class="bg-white/[0.03] border border-white/8 rounded-2xl p-8 hover:border-brand/30 transition-all duration-300"
+              class="bg-gray-50 border border-gray-200 rounded-2xl p-8 hover:border-brand/30 transition-all duration-300"
             >
               <div class="text-brand mb-4">
                 <svg v-if="item.icon === 'mission'" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -123,23 +122,23 @@
                   <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                 </svg>
               </div>
-              <h3 class="text-white font-bold text-xl mb-3">{{ item.title }}</h3>
-              <p class="text-white/50 text-sm leading-relaxed">{{ item.desc }}</p>
+              <h3 class="text-gray-900 font-bold text-xl mb-3">{{ item.title }}</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">{{ item.desc }}</p>
             </div>
           </div>
         </section>
 
         <!-- Kalite & Emniyet - Sertifikalar -->
-        <section class="py-16 border-t border-white/5">
+        <section class="py-16 border-t border-gray-100">
           <div class="flex items-center gap-3 mb-12">
             <span class="h-px w-10 bg-brand" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Kalite & Emniyet</span>
           </div>
           <div class="grid md:grid-cols-2 gap-16 items-start mb-14">
-            <h2 class="text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-white leading-tight tracking-tight">
+            <h2 class="text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-gray-900 leading-tight tracking-tight">
               Uluslararası Standartlarda Sertifikalı
             </h2>
-            <p class="text-white/50 text-[17px] leading-[1.9] pt-2">
+            <p class="text-gray-500 text-[17px] leading-[1.9] pt-2">
               Tüm operasyonlarımız uluslararası havacılık güvenlik ve kalite standartlarına uygun şekilde yürütülmektedir. Aşağıdaki sertifikalar, kalite taahhüdümüzün somut göstergesidir.
             </p>
           </div>
@@ -148,10 +147,10 @@
             <div
               v-for="cert in certificates"
               :key="cert.name"
-              class="bg-white/[0.03] border border-white/8 rounded-xl p-6 flex flex-col gap-2 hover:border-brand/30 transition-all duration-300"
+              class="bg-gray-50 border border-gray-200 rounded-xl p-6 flex flex-col gap-2 hover:border-brand/30 transition-all duration-300"
             >
               <span class="text-brand font-bold text-lg">{{ cert.name }}</span>
-              <span class="text-white/40 text-xs leading-relaxed">{{ cert.desc }}</span>
+              <span class="text-gray-400 text-xs leading-relaxed">{{ cert.desc }}</span>
             </div>
           </div>
         </section>

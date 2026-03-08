@@ -44,49 +44,81 @@
           class="grid lg:grid-cols-[1fr_260px] xl:grid-cols-[1fr_300px] gap-10 items-start"
         >
           <!-- Map -->
-          <div class="rounded-2xl bg-slate-900 overflow-hidden p-4 md:p-6 max-h-[480px] flex items-center">
-            <div class="relative w-full" ref="mapWrapper">
-              <img
-                :src="`/maps/${activeCountry.code}.svg`"
-                :alt="activeCountry.label[locale as 'tr' | 'en']"
-                class="w-full block select-none"
-                draggable="false"
-              />
+          <div class="rounded-2xl bg-slate-900 overflow-hidden p-4 md:p-6">
+            <div class="relative" ref="mapContainer">
+              <!-- Loading skeleton -->
+              <div v-if="!svgContent" class="w-full aspect-[16/9] bg-slate-800 rounded-xl animate-pulse" />
 
-              <!-- Airport Pins -->
-              <div
-                v-for="airport in activeCountry.airports"
-                :key="airport.iata"
-                class="absolute z-10 cursor-pointer"
-                :style="getPinStyle(airport)"
-                @mouseenter="hoveredAirport = airport"
-                @mouseleave="hoveredAirport = null"
-                @click="hoveredAirport = hoveredAirport?.iata === airport.iata ? null : airport"
+              <!-- Inline SVG Map -->
+              <svg
+                v-else
+                :viewBox="svgViewBox"
+                class="w-full h-auto block select-none map-svg"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <!-- Ping ring -->
-                <span class="absolute inset-0 -m-2 flex items-center justify-center pointer-events-none">
-                  <span class="w-5 h-5 rounded-full bg-brand/25 animate-ping" />
-                </span>
-                <!-- Dot -->
-                <span class="block w-2.5 h-2.5 rounded-full bg-brand border-[2.5px] border-white shadow-[0_0_8px_rgba(0,61,165,0.7)] relative z-10" />
+                <!-- Map paths injected from SVG file -->
+                <g v-html="svgContent" />
 
-                <!-- Tooltip (above pin) -->
-                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 pointer-events-none z-20">
-                  <div
-                    class="tooltip-card bg-white rounded-xl px-3 py-2.5 shadow-2xl whitespace-nowrap"
-                    :class="hoveredAirport?.iata === airport.iata ? 'tooltip-show' : ''"
+                <!-- Airport Pins -->
+                <g
+                  v-for="airport in activeCountry.airports"
+                  :key="airport.iata"
+                  class="airport-pin"
+                  style="cursor: pointer"
+                  @mouseenter="hoveredAirport = airport"
+                  @mouseleave="hoveredAirport = null"
+                  @click="hoveredAirport = hoveredAirport?.iata === airport.iata ? null : airport"
+                >
+                  <!-- Pulse ring -->
+                  <circle
+                    :cx="getSvgX(airport)"
+                    :cy="getSvgY(airport)"
+                    :r="pinRadius"
+                    fill="#003DA5"
+                    opacity="0.3"
                   >
-                    <div class="text-[12px] font-bold text-brand leading-none mb-1">{{ airport.iata }}</div>
-                    <div class="text-[10px] text-gray-500 max-w-[200px] leading-snug">{{ airport.name }}</div>
-                    <div v-if="airport.phone" class="text-[10px] text-gray-400 mt-1 font-medium">{{ airport.phone }}</div>
-                  </div>
-                  <!-- Arrow -->
-                  <div
-                    class="tooltip-arrow border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-white mx-auto w-0 h-0"
-                    :class="hoveredAirport?.iata === airport.iata ? 'tooltip-show' : ''"
+                    <animate
+                      attributeName="r"
+                      :values="`${pinRadius};${pinRadius * 2.8};${pinRadius}`"
+                      dur="2.2s"
+                      repeatCount="indefinite"
+                    />
+                    <animate
+                      attributeName="opacity"
+                      values="0.4;0;0.4"
+                      dur="2.2s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
+
+                  <!-- Pin dot -->
+                  <circle
+                    :cx="getSvgX(airport)"
+                    :cy="getSvgY(airport)"
+                    :r="pinRadius * 0.55"
+                    fill="#003DA5"
+                    stroke="white"
+                    :stroke-width="pinRadius * 0.22"
+                    :class="hoveredAirport?.iata === airport.iata ? 'pin-active' : ''"
                   />
+                </g>
+              </svg>
+
+              <!-- Tooltip (HTML overlay, positioned by percentage) -->
+              <Transition name="tooltip">
+                <div
+                  v-if="hoveredAirport && svgContent"
+                  class="absolute pointer-events-none z-20"
+                  :style="getTooltipStyle(hoveredAirport)"
+                >
+                  <div class="bg-white rounded-xl px-3 py-2.5 shadow-2xl whitespace-nowrap -translate-x-1/2 -translate-y-full -mt-2">
+                    <div class="text-[12px] font-bold text-brand leading-none mb-1">{{ hoveredAirport.iata }}</div>
+                    <div class="text-[10px] text-gray-500 max-w-[200px] leading-snug">{{ hoveredAirport.name }}</div>
+                    <div v-if="hoveredAirport.phone" class="text-[10px] text-gray-400 mt-1 font-medium">{{ hoveredAirport.phone }}</div>
+                  </div>
+                  <div class="border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[5px] border-t-white -translate-x-1/2 w-0 h-0 relative left-1/2" />
                 </div>
-              </div>
+              </Transition>
             </div>
           </div>
 
@@ -173,6 +205,21 @@ const sectionRef = ref<HTMLElement>()
 const labelRef = ref<HTMLElement>()
 const lineRef = ref<HTMLElement>()
 const titleRef = ref<HTMLElement>()
+const mapContainer = ref<HTMLElement>()
+
+const svgContent = ref('')
+const svgViewBox = ref('0 0 1000 600')
+
+const svgDims = computed(() => {
+  const parts = svgViewBox.value.split(' ')
+  return { w: parseFloat(parts[2]), h: parseFloat(parts[3]) }
+})
+
+// Pin radius scales with the shorter SVG dimension
+const pinRadius = computed(() => {
+  const { w, h } = svgDims.value
+  return Math.min(w, h) * 0.022
+})
 
 function getFlagEmoji(code: string): string {
   return code.toUpperCase().split('').map(c => String.fromCodePoint(c.charCodeAt(0) + 127397)).join('')
@@ -183,16 +230,46 @@ function selectCountry(country: Country) {
   activeCountry.value = country
 }
 
-function getPinStyle(airport: Airport) {
-  const { minLng, maxLng, minLat, maxLat } = activeCountry.value.bbox
-  const x = ((airport.lng - minLng) / (maxLng - minLng)) * 100
-  const y = ((maxLat - airport.lat) / (maxLat - minLat)) * 100
+function getSvgX(airport: Airport): number {
+  const { minLng, maxLng } = activeCountry.value.bbox
+  const { w } = svgDims.value
+  return ((airport.lng - minLng) / (maxLng - minLng)) * w
+}
+
+function getSvgY(airport: Airport): number {
+  const { minLat, maxLat } = activeCountry.value.bbox
+  const { h } = svgDims.value
+  return ((maxLat - airport.lat) / (maxLat - minLat)) * h
+}
+
+function getTooltipStyle(airport: Airport) {
+  const { w, h } = svgDims.value
   return {
-    left: `${x}%`,
-    top: `${y}%`,
-    transform: 'translate(-50%, -50%)',
+    left: `${(getSvgX(airport) / w) * 100}%`,
+    top: `${(getSvgY(airport) / h) * 100}%`,
   }
 }
+
+async function loadSvg(code: string) {
+  svgContent.value = ''
+  try {
+    const res = await fetch(`/maps/${code}.svg`)
+    const text = await res.text()
+    const vbMatch = text.match(/viewBox="([^"]+)"/)
+    if (vbMatch) svgViewBox.value = vbMatch[1]
+    // Extract inner SVG content, strip embedded style/script tags
+    const bodyMatch = text.match(/<svg[^>]*>([\s\S]*?)<\/svg>/)
+    if (bodyMatch) {
+      svgContent.value = bodyMatch[1]
+        .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
+        .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
+    }
+  } catch (e) {
+    console.error('Failed to load SVG map:', code, e)
+  }
+}
+
+watch(() => activeCountry.value.code, loadSvg)
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
@@ -208,6 +285,8 @@ onMounted(() => {
       gsap.to(titleRef.value!, { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', delay: 0.15 })
     },
   })
+
+  loadSvg(activeCountry.value.code)
 })
 </script>
 
@@ -220,30 +299,25 @@ onMounted(() => {
 .tab-leave-active {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
-.tab-enter-from {
-  opacity: 0;
-  transform: translateY(12px);
-}
-.tab-leave-to {
-  opacity: 0;
-  transform: translateY(-8px);
-}
+.tab-enter-from { opacity: 0; transform: translateY(12px); }
+.tab-leave-to   { opacity: 0; transform: translateY(-8px); }
 
 /* Tooltip */
-.tooltip-card {
-  opacity: 0;
-  transform: translateY(5px) scale(0.95);
-  transition: opacity 0.15s ease, transform 0.15s ease;
+.tooltip-enter-active,
+.tooltip-leave-active { transition: opacity 0.12s ease; }
+.tooltip-enter-from,
+.tooltip-leave-to { opacity: 0; }
+
+/* Map path styling — targets injected SVG paths via :deep */
+.map-svg :deep(path) {
+  fill: #1e293b;
+  stroke: #334155;
+  stroke-width: 0.5px;
+  pointer-events: none;
 }
-.tooltip-card.tooltip-show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-.tooltip-arrow {
-  opacity: 0;
-  transition: opacity 0.15s ease;
-}
-.tooltip-arrow.tooltip-show {
-  opacity: 1;
+
+/* Active pin highlight */
+.airport-pin .pin-active {
+  fill: #0056e0;
 }
 </style>

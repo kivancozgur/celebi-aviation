@@ -1,10 +1,9 @@
 <template>
-  <div class="bg-[#0A0A0A] min-h-screen text-white font-inter">
-    <AppNav />
+  <div class="bg-white min-h-screen text-gray-900 font-inter">
 
-    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-white/5">
+    <header class="pt-36 pb-20 px-6 md:px-12 lg:px-20 border-b border-gray-100">
       <div class="max-w-screen-xl mx-auto">
-        <NuxtLink to="/" class="inline-flex items-center gap-2 text-white/40 text-sm hover:text-white transition-colors duration-300 mb-10 group">
+        <NuxtLink to="/" class="inline-flex items-center gap-2 text-gray-400 text-sm hover:text-gray-900 transition-colors duration-300 mb-10 group">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -14,10 +13,10 @@
           <span class="h-px w-10 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Hizmetler</span>
         </div>
-        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-white leading-tight tracking-tight max-w-3xl">
+        <h1 class="text-[clamp(2.5rem,6vw,5rem)] font-bold text-gray-900 leading-tight tracking-tight max-w-3xl">
           Genel Havacılık
         </h1>
-        <p class="text-white/50 text-lg leading-relaxed mt-6 max-w-2xl">
+        <p class="text-gray-500 text-lg leading-relaxed mt-6 max-w-2xl">
           Özel, askeri, devlet ve tarifesiz uçuşlar için kapsamlı FBO ve genel havacılık hizmetleri.
         </p>
       </div>
@@ -33,17 +32,17 @@
               <span class="h-px w-10 bg-brand" />
               <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Genel Havacılık</span>
             </div>
-            <h2 class="text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-white leading-tight tracking-tight">
+            <h2 class="text-[clamp(1.8rem,3vw,2.8rem)] font-bold text-gray-900 leading-tight tracking-tight">
               Her Uçuş Türüne Özel Çözüm
             </h2>
           </div>
-          <p class="text-white/55 text-[17px] leading-[1.9] pt-2">
+          <p class="text-gray-500 text-[17px] leading-[1.9] pt-2">
             Özel jet operasyonlarından devlet uçuşlarına, acil tahliyelerden askeri operasyonlara kadar her türlü genel havacılık ihtiyacına profesyonel çözümler sunuyoruz. Deneyimli ekibimiz, operasyonunuzun her aşamasında yanınızdadır.
           </p>
         </section>
 
         <!-- Services Grid -->
-        <section class="py-8 border-t border-white/5">
+        <section class="py-8 border-t border-gray-100">
           <div class="flex items-center gap-3 mb-12">
             <span class="h-px w-10 bg-brand" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Hizmet Listesi</span>
@@ -52,38 +51,38 @@
             <div
               v-for="service in services"
               :key="service.title"
-              class="bg-white/[0.03] border border-white/8 rounded-xl p-6 hover:border-brand/30 transition-all duration-300 group"
+              class="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:border-brand/30 transition-all duration-300 group"
             >
               <div class="text-brand mb-4">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                   <path :d="service.iconPath" />
                 </svg>
               </div>
-              <h3 class="text-white font-semibold text-sm mb-2 group-hover:text-brand transition-colors duration-300">{{ service.title }}</h3>
-              <p class="text-white/40 text-xs leading-relaxed">{{ service.desc }}</p>
+              <h3 class="text-gray-900 font-semibold text-sm mb-2 group-hover:text-brand transition-colors duration-300">{{ service.title }}</h3>
+              <p class="text-gray-400 text-xs leading-relaxed">{{ service.desc }}</p>
             </div>
           </div>
         </section>
 
         <!-- Uçuş Türleri -->
-        <section class="py-16 border-t border-white/5">
+        <section class="py-16 border-t border-gray-100">
           <div class="flex items-center gap-3 mb-12">
             <span class="h-px w-10 bg-brand" />
             <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">Uçuş Türleri</span>
           </div>
           <div class="grid md:grid-cols-4 gap-6">
             <div v-for="type in flightTypes" :key="type" class="py-6 border-t-2 border-brand/30">
-              <p class="text-white font-semibold">{{ type }}</p>
+              <p class="text-gray-900 font-semibold">{{ type }}</p>
             </div>
           </div>
         </section>
 
         <!-- Ödeme CTA -->
-        <section class="py-16 border-t border-white/5">
-          <div class="bg-white/[0.03] border border-white/8 rounded-2xl p-12 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <section class="py-16 border-t border-gray-100">
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-12 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div>
-              <h2 class="text-white font-bold text-3xl md:text-4xl leading-tight mb-3">Hızlı Teklif Alın</h2>
-              <p class="text-white/45 text-base leading-relaxed max-w-lg">Genel havacılık operasyonunuz için online ödeme ve teklif imkânı.</p>
+              <h2 class="text-gray-900 font-bold text-3xl md:text-4xl leading-tight mb-3">Hızlı Teklif Alın</h2>
+              <p class="text-gray-500 text-base leading-relaxed max-w-lg">Genel havacılık operasyonunuz için online ödeme ve teklif imkânı.</p>
             </div>
             <NuxtLink to="/#contact" class="flex-none inline-flex items-center gap-3 bg-brand hover:bg-brand/90 text-white font-medium px-8 py-4 rounded-xl transition-all duration-300 whitespace-nowrap">
               İletişime Geç

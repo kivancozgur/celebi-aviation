@@ -7,6 +7,33 @@
     "lostItem": "Lost Item",
     "cargoTracking": "Cargo Tracking"
   },
+  "menu": {
+    "corporate": "Corporate",
+    "about": "About Us",
+    "numbers": "Çelebi in Numbers",
+    "investor": "Investor Relations",
+    "ethics": "Code of Ethics",
+    "infosec": "Information Security Policy",
+    "csr": "Social Responsibility",
+    "services": "Services",
+    "ground": "Ground Handling",
+    "cargo": "Cargo & Warehouse",
+    "ga": "General Aviation",
+    "bridge": "Bridge Operations",
+    "lounge": "Lounge",
+    "platinum": "Platinum",
+    "media": "Media",
+    "news": "News",
+    "announcements": "Announcements",
+    "events": "Events",
+    "corpcomm": "Corporate Communications",
+    "careers": "Careers",
+    "career": "Career",
+    "openpos": "Open Positions",
+    "hrpolicy": "HR Policies",
+    "academy": "Çelebi Academy",
+    "contact": "Contact"
+  },
   "hero": {
     "titleWords": ["Shaping", "the Future", "of Aviation."],
     "subtitle": "Ground handling, cargo, general aviation, and premium solutions across 6 countries and 60+ airports worldwide."
@@ -87,6 +114,13 @@
     "label": "Celebi in Numbers",
     "title": "Global Impact",
     "cities": "Cities",
+    "airports": "Airports"
+  },
+  "globalMap": {
+    "label": "Global Impact Area",
+    "titleLine1": "Operations",
+    "titleLine2": "Map.",
+    "operations": "Operations",
     "airports": "Airports"
   },
   "footer": {

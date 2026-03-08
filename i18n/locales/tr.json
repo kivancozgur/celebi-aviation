@@ -7,6 +7,33 @@
     "lostItem": "Kayıp Eşya",
     "cargoTracking": "Kargo Takibi"
   },
+  "menu": {
+    "corporate": "Kurumsal",
+    "about": "Hakkımızda",
+    "numbers": "Rakamlarla Çelebi",
+    "investor": "Yatırımcı İlişkileri",
+    "ethics": "Etik Davranış İlkeleri",
+    "infosec": "Bilgi Güvenliği Politikası",
+    "csr": "Sosyal Sorumluluk",
+    "services": "Hizmetler",
+    "ground": "Yer Hizmetleri",
+    "cargo": "Kargo & Antrepo",
+    "ga": "Genel Havacılık",
+    "bridge": "Köprü Operasyonu",
+    "lounge": "Lounge",
+    "platinum": "Platinum",
+    "media": "Medya",
+    "news": "Haberler",
+    "announcements": "Duyurular",
+    "events": "Etkinlikler",
+    "corpcomm": "Kurumsal İletişim",
+    "careers": "Kariyer",
+    "career": "Kariyer",
+    "openpos": "Açık Pozisyonlar",
+    "hrpolicy": "İK Politikaları",
+    "academy": "Çelebi Akademi",
+    "contact": "İletişim"
+  },
   "hero": {
     "titleWords": ["Havacılığın", "Geleceğini", "Taşıyoruz."],
     "subtitle": "Dünya genelinde 6 ülkede, 60+ havalimanında yer hizmetleri, kargo, genel havacılık ve premium çözümler."
@@ -87,6 +114,13 @@
     "label": "Rakamlarla Çelebi",
     "title": "Küresel Etki",
     "cities": "Şehirler",
+    "airports": "Havalimanları"
+  },
+  "globalMap": {
+    "label": "Küresel Etki Alanı",
+    "titleLine1": "Operasyon",
+    "titleLine2": "Haritamız.",
+    "operations": "Operasyonlar",
     "airports": "Havalimanları"
   },
   "footer": {

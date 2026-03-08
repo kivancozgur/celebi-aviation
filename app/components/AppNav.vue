@@ -15,15 +15,34 @@
     </NuxtLink>
 
     <!-- Nav Links -->
-    <ul class="hidden md:flex items-center gap-12">
-      <li v-for="link in links" :key="link.key">
-        <a
-          :href="link.href"
-          class="nav-link text-[13px] tracking-[0.5px] transition-colors duration-300"
+    <ul class="hidden md:flex items-center gap-8">
+      <li v-for="link in links" :key="link.key" class="relative group">
+        <NuxtLink
+          :to="link.to"
+          class="nav-link text-[13px] tracking-[0.5px] transition-colors duration-300 flex items-center gap-1"
           :class="isScrolled ? 'text-gray-600 hover:text-gray-900' : 'text-white/85 hover:text-white'"
         >
           {{ $t(link.key) }}
-        </a>
+          <svg v-if="link.children" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="opacity-60 group-hover:rotate-180 transition-transform duration-200">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </NuxtLink>
+        <!-- Dropdown -->
+        <div
+          v-if="link.children"
+          class="absolute top-full left-0 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+        >
+          <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[200px]">
+            <NuxtLink
+              v-for="child in link.children"
+              :key="child.to"
+              :to="child.to"
+              class="block px-4 py-2.5 text-[13px] text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+            >
+              {{ $t(child.key) }}
+            </NuxtLink>
+          </div>
+        </div>
       </li>
     </ul>
 
@@ -94,10 +113,48 @@ const navRef = ref<HTMLElement>()
 const isScrolled = ref(false)
 
 const links = [
-  { key: 'nav.services', href: '#services' },
-  { key: 'nav.aircraft', href: '#aircraft' },
-  { key: 'nav.about', href: '#about' },
-  { key: 'nav.contact', href: '#contact' },
+  {
+    key: 'menu.corporate',
+    to: '/hakkimizda',
+    children: [
+      { key: 'menu.about', to: '/hakkimizda' },
+      { key: 'menu.numbers', to: '/rakamlarla-celebi' },
+      { key: 'menu.investor', to: '/yatirimci-iliskileri' },
+      { key: 'menu.ethics', to: '/etik-davranis-ilkeleri' },
+      { key: 'menu.csr', to: '/sosyal-sorumluluk' },
+    ],
+  },
+  {
+    key: 'menu.services',
+    to: '/yer-hizmetleri',
+    children: [
+      { key: 'menu.ground', to: '/yer-hizmetleri' },
+      { key: 'menu.cargo', to: '/kargo-ve-antrepo' },
+      { key: 'menu.ga', to: '/genel-havacilik' },
+      { key: 'menu.bridge', to: '/kopru-operasyonu' },
+      { key: 'menu.lounge', to: '/lounge' },
+      { key: 'menu.platinum', to: '/platinum' },
+    ],
+  },
+  {
+    key: 'menu.media',
+    to: '/haberler',
+    children: [
+      { key: 'menu.news', to: '/haberler' },
+      { key: 'menu.announcements', to: '/duyurular' },
+      { key: 'menu.events', to: '/etkinlikler' },
+    ],
+  },
+  {
+    key: 'menu.careers',
+    to: '/kariyer',
+    children: [
+      { key: 'menu.career', to: '/kariyer' },
+      { key: 'menu.openpos', to: '/acik-pozisyonlar' },
+      { key: 'menu.academy', to: '/celebi-akademi' },
+    ],
+  },
+  { key: 'menu.contact', to: '/iletisim' },
 ]
 
 onMounted(() => {

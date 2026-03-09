@@ -131,39 +131,41 @@
     "terms": "Kullanım Koşulları",
     "columns": [
       {
-        "title": "Hakkımızda",
+        "title": "Kurumsal",
         "links": [
-          { "label": "Hakkımızda", "href": "#hakkinda" },
-          { "label": "Kalite ve Emniyet", "href": "#" },
-          { "label": "Sosyal Sorumluluk", "href": "#" },
-          { "label": "Yatırımcı İlişkileri", "href": "#" },
-          { "label": "Etik İlkeler", "href": "#" }
+          { "label": "Hakkımızda", "href": "/hakkimizda" },
+          { "label": "Rakamlarla Çelebi", "href": "/rakamlarla-celebi" },
+          { "label": "Sosyal Sorumluluk", "href": "/sosyal-sorumluluk" },
+          { "label": "Yatırımcı İlişkileri", "href": "/yatirimci-iliskileri" },
+          { "label": "Etik İlkeler", "href": "/etik-davranis-ilkeleri" }
         ]
       },
       {
         "title": "Hizmetler",
         "links": [
-          { "label": "Yer Hizmetleri", "href": "#hizmetler" },
-          { "label": "Kargo ve Antrepo", "href": "#hizmetler" },
-          { "label": "Genel Havacılık", "href": "#hizmetler" },
-          { "label": "VIP Lounge", "href": "#hizmetler" },
-          { "label": "Teknik Hizmetler", "href": "#hizmetler" }
+          { "label": "Yer Hizmetleri", "href": "/yer-hizmetleri" },
+          { "label": "Kargo ve Antrepo", "href": "/kargo-ve-antrepo" },
+          { "label": "Genel Havacılık", "href": "/genel-havacilik" },
+          { "label": "Lounge", "href": "/lounge" },
+          { "label": "Platinum", "href": "/platinum" }
         ]
       },
       {
         "title": "Medya",
         "links": [
-          { "label": "Haberler", "href": "#haberler" },
-          { "label": "Etkinlikler", "href": "#" },
-          { "label": "Kurumsal İletişim", "href": "#iletisim" }
+          { "label": "Haberler", "href": "/haberler" },
+          { "label": "Duyurular", "href": "/duyurular" },
+          { "label": "Etkinlikler", "href": "/etkinlikler" },
+          { "label": "Kurumsal İletişim", "href": "/kurumsal-iletisim" }
         ]
       },
       {
         "title": "Kariyer",
         "links": [
-          { "label": "IK Politikaları", "href": "/kariyer" },
-          { "label": "Çelebi Akademi", "href": "/kariyer" },
-          { "label": "Açık Pozisyonlar", "href": "/kariyer" }
+          { "label": "Kariyer", "href": "/kariyer" },
+          { "label": "Açık Pozisyonlar", "href": "/acik-pozisyonlar" },
+          { "label": "İK Politikaları", "href": "/ik-politikalari" },
+          { "label": "Çelebi Akademi", "href": "/celebi-akademi" }
         ]
       }
     ]

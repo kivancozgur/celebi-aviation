@@ -35,7 +35,7 @@
           <h4 class="text-gray-900 text-sm font-semibold mb-4 tracking-wide">{{ col.title }}</h4>
           <ul class="space-y-3">
             <li v-for="link in col.links" :key="link.label">
-              <a :href="link.href" class="text-gray-500 text-sm hover:text-brand transition-colors duration-200">{{ link.label }}</a>
+              <NuxtLink :to="link.href" class="text-gray-500 text-sm hover:text-brand transition-colors duration-200">{{ link.label }}</NuxtLink>
             </li>
           </ul>
         </div>

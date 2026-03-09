@@ -1,7 +1,9 @@
 <template>
   <div>
     <div id="scroll-progress" />
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
     <AppFooter />
     <CookieBanner />
   </div>

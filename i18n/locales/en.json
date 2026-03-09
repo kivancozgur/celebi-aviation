@@ -131,39 +131,41 @@
     "terms": "Terms of Use",
     "columns": [
       {
-        "title": "About Us",
+        "title": "Corporate",
         "links": [
-          { "label": "About Us", "href": "#about" },
-          { "label": "Quality & Safety", "href": "#" },
-          { "label": "Social Responsibility", "href": "#" },
-          { "label": "Investor Relations", "href": "#" },
-          { "label": "Ethics", "href": "#" }
+          { "label": "About Us", "href": "/hakkimizda" },
+          { "label": "Çelebi in Numbers", "href": "/rakamlarla-celebi" },
+          { "label": "Social Responsibility", "href": "/sosyal-sorumluluk" },
+          { "label": "Investor Relations", "href": "/yatirimci-iliskileri" },
+          { "label": "Code of Ethics", "href": "/etik-davranis-ilkeleri" }
         ]
       },
       {
         "title": "Services",
         "links": [
-          { "label": "Ground Handling", "href": "#services" },
-          { "label": "Cargo & Warehouse", "href": "#services" },
-          { "label": "General Aviation", "href": "#services" },
-          { "label": "VIP Lounge", "href": "#services" },
-          { "label": "Technical Services", "href": "#services" }
+          { "label": "Ground Handling", "href": "/yer-hizmetleri" },
+          { "label": "Cargo & Warehouse", "href": "/kargo-ve-antrepo" },
+          { "label": "General Aviation", "href": "/genel-havacilik" },
+          { "label": "Lounge", "href": "/lounge" },
+          { "label": "Platinum", "href": "/platinum" }
         ]
       },
       {
         "title": "Media",
         "links": [
-          { "label": "News", "href": "#news" },
-          { "label": "Events", "href": "#" },
-          { "label": "Corporate Communications", "href": "#contact" }
+          { "label": "News", "href": "/haberler" },
+          { "label": "Announcements", "href": "/duyurular" },
+          { "label": "Events", "href": "/etkinlikler" },
+          { "label": "Corporate Communications", "href": "/kurumsal-iletisim" }
         ]
       },
       {
         "title": "Careers",
         "links": [
-          { "label": "HR Policies", "href": "/en/kariyer" },
-          { "label": "Celebi Academy", "href": "/en/kariyer" },
-          { "label": "Open Positions", "href": "/en/kariyer" }
+          { "label": "Career", "href": "/kariyer" },
+          { "label": "Open Positions", "href": "/acik-pozisyonlar" },
+          { "label": "HR Policies", "href": "/ik-politikalari" },
+          { "label": "Çelebi Academy", "href": "/celebi-akademi" }
         ]
       }
     ]

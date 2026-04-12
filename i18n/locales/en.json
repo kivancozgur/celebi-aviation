@@ -42,6 +42,7 @@
     "label": "Services",
     "title": "What We Do",
     "subtitle": "Flawless solutions at every point of aviation.",
+    "carouselReadMore": "Read more",
     "items": [
       { "title": "Ground Handling", "desc": "Aircraft, passenger and baggage operations, apron services and ground equipment support." },
       { "title": "Cargo & Logistics", "desc": "Air cargo warehousing, handling and international logistics solutions." },
@@ -50,11 +51,17 @@
       { "title": "Technical Services", "desc": "Aircraft maintenance, repair and overhaul services with technical support." }
     ]
   },
+  "statsHero": {
+    "titleLine1": "Making a Difference",
+    "titleLine2": "at Every Airport.",
+    "desc": "Operating in 6 countries since 1958, Celebi Aviation sets world standards with ground handling, cargo, general aviation and VIP lounge solutions."
+  },
   "about": {
     "label": "About Us",
     "titleWords": ["From Vision", "to Execution."],
     "desc": "Since 1958, Celebi has been at the heart of aviation, setting industry standards with world-class service quality. Combining courage and pragmatism, we make a difference at every airport.",
     "cta": "Learn More",
+    "ctaStart": "Get Started",
     "stats": {
       "founded": "Founded",
       "airports": "Airports",
@@ -66,6 +73,8 @@
     "label": "Contact",
     "titleLine1": "Let's Move",
     "titleLine2": "Forward Together.",
+    "desc": "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help.",
+    "detailsTitle": "Contact Details",
     "hq": "Headquarters",
     "hqValue": "Istanbul, Turkey",
     "email": "Email",
@@ -112,16 +121,10 @@
   },
   "statsSection": {
     "label": "Celebi in Numbers",
-    "title": "Global Impact",
+    "title": "Global Subsidiaries",
     "cities": "Cities",
-    "airports": "Airports"
-  },
-  "globalMap": {
-    "label": "Global Impact Area",
-    "titleLine1": "Operations",
-    "titleLine2": "Map.",
-    "operations": "Operations",
-    "airports": "Airports"
+    "airports": "Airports",
+    "readMore": "More"
   },
   "footer": {
     "tagline": "Leader in global aviation services worldwide.",

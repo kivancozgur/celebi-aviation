@@ -42,19 +42,26 @@
     "label": "Hizmetler",
     "title": "Ne Yapıyoruz",
     "subtitle": "Havacılığın her noktasında kusursuz çözümler sunuyoruz.",
+    "carouselReadMore": "Devamını gör",
     "items": [
-      { "title": "Yer Hizmetleri", "desc": "Uçak yolcu ve bagaj operasyonları, apron hizmetleri ve yer ekipman desteği." },
-      { "title": "Kargo & Lojistik", "desc": "Hava kargo depolama, elleçleme ve uluslararası lojistik çözümleri." },
-      { "title": "Genel Havacılık", "desc": "Özel uçak, helikopter ve VIP operasyonları için kapsamlı FBO hizmetleri." },
-      { "title": "Lounge & Platinum", "desc": "Dünyanın en seçkin havalimanlarında premium yolcu deneyimi ve VIP bekleme salonları." },
-      { "title": "Teknik Hizmetler", "desc": "Uçak bakım, onarım ve revizyon hizmetleri ile teknik destek." }
+      { "title": "Kargo & Antrepo", "desc": "Kargo süreçlerinin başarılı, hatasız ve kesintisiz bir şekilde gerçekleştirilmesinin temelinde yatan neden dikkat ve detaylara verilen önemin fazla olmasındandır.Şirket ilkeleri ve çalışanlarının geçmişten günümüze kadar gelmiş bir kültür ve deneyim ile birlikte hizmet vermesi Çelebi Hava Servisi'nin kargo taşımacılığındaki başarısında büyük rol oynamaktadır." },
+      { "title": "Genel Havacılık", "desc": "Ekibimiz,  özel, askeri, devlet uçuşları, tarifeli olmayan ve acil durum yaşanan uçuşlarının  tümüne hizmet vermekte olup, her zaman yolcu, ekip ve müşteri memnuniyeti hedeflenmektedir." },
+      { "title": "Köprü Operasyonu", "desc": "Çelebi Havacılık, yolcu biniş köprülerini üç ayrı istasyonda sunmaktadır. Çelebi şu anda Avusturya'da Viyana Havaalanı, Macaristan'da Budapeşte Havaalanı ve Türkiye'de İstanbul Havaalanı'nda yolcu biniş köprülerini işletmektedir." },
+      { "title": "Lounge", "desc": "Eğlence ve iş odaklı olabilecek konuklarımıza ücretsiz internet erişimi, ulusal ve uluslararası medya yayınları, iş kutuları, bilgisayar çıktısı alabileceği ve faks ile iletişim kurbaleceği ek premium hizmetler ile en üst düzey konforu sunuyoruz." },
+      { "title": "Platinum", "desc": "Çelebi Platinum Hizmetleri, her misafirin kendini rahat, keyifli ve ayrıcalıklı hissetmesi için gerekli ayrıcalığa sahiptir. Bu ilkelerle deneyimli Platinum ekiplerimiz sadece özel jetle uçan misafirlerimize değil, ticari veya ekonomi sınıfı ticari havayollarını kullanan misafirlerimize de özel hizmet vermektedir." }
     ]
+  },
+  "statsHero": {
+    "titleLine1": "Her Havalimanında",
+    "titleLine2": "Fark Yaratıyoruz.",
+    "desc": "1958'den bu yana 6 ülkede faaliyet gösteren Çelebi Havacılık; yer hizmetleri, kargo, genel havacılık ve VIP lounge çözümleriyle dünya standartlarını belirliyor."
   },
   "about": {
     "label": "Hakkımızda",
     "titleWords": ["Vizyondan", "Uygulamaya."],
     "desc": "1958'den bu yana havacılığın kalbinde yer alan Çelebi, dünya standartlarında hizmet kalitesiyle sektöre yön veriyor. Cesaret ve pragmatizmi birleştiren yaklaşımımızla, her havalimanında fark yaratıyoruz.",
     "cta": "Daha Fazla Bilgi",
+    "ctaStart": "Başlayın",
     "stats": {
       "founded": "Kuruluş Yılı",
       "airports": "Havalimanı",
@@ -66,6 +73,8 @@
     "label": "İletişim",
     "titleLine1": "Birlikte",
     "titleLine2": "ilerleyelim.",
+    "desc": "Sorularınız, geri bildirimleriniz veya iş birliği talepleriniz için buradayız. Size nasıl yardımcı olabileceğimizi öğrenmek için bize ulaşın.",
+    "detailsTitle": "İletişim Bilgileri",
     "hq": "Genel Merkez",
     "hqValue": "İstanbul, Türkiye",
     "email": "E-posta",
@@ -112,16 +121,10 @@
   },
   "statsSection": {
     "label": "Rakamlarla Çelebi",
-    "title": "Küresel Etki",
+    "title": "Küresel İştirakler",
     "cities": "Şehirler",
-    "airports": "Havalimanları"
-  },
-  "globalMap": {
-    "label": "Küresel Etki Alanı",
-    "titleLine1": "Operasyon",
-    "titleLine2": "Haritamız.",
-    "operations": "Operasyonlar",
-    "airports": "Havalimanları"
+    "airports": "Havalimanları",
+    "readMore": "Devamı"
   },
   "footer": {
     "tagline": "Dünya genelinde havacılık hizmetlerinde lider.",

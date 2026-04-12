@@ -5,7 +5,8 @@
     "summary": "Çelebi Havacılık, Hindistan'daki operasyonlarını yeni havalimanı anlaşmalarıyla genişleterek bölgedeki varlığını güçlendiriyor.",
     "date": "2025-02-15",
     "image": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80",
-    "slug": "hindistan-operasyonlari-genisleme"
+    "slug": "hindistan-operasyonlari-genisleme",
+    "category": "GROUNDHANDLING"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "summary": "Çelebi Havacılık, karbon ayak izini azaltma çalışmaları kapsamında uluslararası sürdürülebilirlik sertifikasyonunu tamamladı.",
     "date": "2025-01-28",
     "image": "https://images.unsplash.com/photo-1542296332-2e4473faf563?w=600&q=80",
-    "slug": "surdurulebilir-havacilik-sertifikasi"
+    "slug": "surdurulebilir-havacilik-sertifikasi",
+    "category": "SUSTAINABILITY"
   },
   {
     "id": 3,
@@ -21,6 +23,7 @@
     "summary": "İstanbul Havalimanı'ndaki yeni premium VIP lounge, iş dünyasının önde gelen isimlerinin katılımıyla hizmete girdi.",
     "date": "2025-01-10",
     "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
-    "slug": "istanbul-yeni-vip-lounge"
+    "slug": "istanbul-yeni-vip-lounge",
+    "category": "VIP LOUNGE"
   }
 ]

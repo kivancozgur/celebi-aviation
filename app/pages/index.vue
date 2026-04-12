@@ -1,10 +1,10 @@
 <template>
   <main class="bg-white min-h-screen font-inter">
     <SectionHero />
-    <SectionStats />
-    <SectionGlobalMap />
     <SectionAbout />
-    <SectionAircraft />
+    <SectionServices />
+    <SectionStats />
+    <SectionStatsHero />
     <SectionNews />
     <SectionCareers />
     <SectionContact />

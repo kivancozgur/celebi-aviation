@@ -1,81 +1,61 @@
 <template>
-  <section id="about" ref="aboutRef" class="bg-white py-[120px] px-6 md:px-12 lg:px-20">
-    <!-- Top: Title + Description -->
-    <div class="flex flex-col md:flex-row items-start justify-between mb-20 gap-10 md:gap-20">
-      <!-- Left: Label + Title -->
-      <div ref="aboutLeftRef" class="opacity-0 translate-y-16">
+  <section id="about" class="bg-white py-[120px] px-6 md:px-12 lg:px-20">
+    <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-start gap-16 lg:gap-24">
+      <!-- Left: Text Content -->
+      <div ref="textRef" class="max-w-md flex-shrink-0 opacity-0 translate-y-5">
         <div class="flex items-center gap-3 mb-6">
-          <span ref="aboutLineRef" class="h-px w-0 bg-brand" />
+          <span ref="lineRef" class="h-px w-0 bg-brand" />
           <span class="text-brand text-[11px] font-medium tracking-[3px] uppercase">{{ t('about.label') }}</span>
         </div>
-        <h2 class="text-[64px] font-bold text-gray-900 leading-[1.05] tracking-[-2px] max-w-lg">
+        <h2 class="text-[40px] sm:text-[48px] md:text-[56px] font-bold text-gray-900 leading-[1.1] tracking-[-2px] mb-6">
           <span
-            v-for="(word, i) in aboutTitleWords"
+            v-for="(word, i) in titleWords"
             :key="i"
             class="word-wrap"
           >
-            <span
-              :ref="(el) => setAboutWordRef(el as HTMLElement, i)"
-              class="inline-block"
-            >{{ word }}<template v-if="i < aboutTitleWords.length - 1">&nbsp;</template></span>
+            <span class="inline-block">{{ word }}<template v-if="i < titleWords.length - 1">&nbsp;</template></span>
           </span>
         </h2>
-      </div>
-
-      <!-- Right: Description + CTA -->
-      <div ref="aboutRightRef" class="max-w-md pt-4 opacity-0 translate-x-12">
-        <p class="text-gray-500 text-[17px] leading-[1.8] mb-8">
+        <p class="text-gray-500 text-[17px] leading-[1.8] mb-10">
           {{ t('about.desc') }}
         </p>
-        <a
-          href="#contact"
-          class="inline-flex items-center gap-3 text-white text-sm font-medium group"
-        >
-          <span class="relative">
-            {{ t('about.cta') }}
-            <span
-              class="absolute bottom-0 left-0 h-px w-0 bg-brand transition-all duration-400 group-hover:w-full"
-            />
-          </span>
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-            class="transition-transform duration-300 group-hover:translate-x-1"
+        <div class="flex gap-4 items-center flex-wrap">
+          <a
+            href="#contact"
+            class="inline-flex items-center gap-2.5 bg-[#0084ff] text-white py-3 px-6 rounded-md text-sm font-medium hover:bg-[#0066cc] hover:translate-x-0.5 transition-all duration-200"
           >
-            <path
-              d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5"
-              stroke="#003DA5"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </a>
+            {{ t('about.ctaStart') }}
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a
+            href="#contact"
+            class="text-gray-500 py-3 px-6 text-sm font-medium hover:text-gray-900 transition-colors duration-200"
+          >
+            {{ t('about.cta') }}
+          </a>
+        </div>
       </div>
-    </div>
 
-    <!-- Divider line -->
-    <div
-      ref="dividerRef"
-      class="h-px bg-gray-200 mb-20 origin-left scale-x-0"
-    />
-
-    <!-- Stats row -->
-    <div ref="statsRowRef" class="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-0">
+      <!-- Right: Gallery Grid -->
       <div
-        v-for="stat in stats"
-        :key="stat.label"
-        class="stat-item opacity-0 translate-y-8"
+        ref="gridRef"
+        class="flex-1 w-full grid grid-cols-2 gap-4"
+        style="grid-template-rows: 50px 150px 50px 150px 50px"
       >
         <div
-          class="text-[48px] font-bold tracking-[-2px] leading-none mb-2"
-          :class="stat.accent ? 'text-brand' : 'text-gray-900'"
+          v-for="(img, i) in galleryImages"
+          :key="i"
+          class="gallery-cell relative overflow-hidden rounded-xl shadow-xl opacity-0"
+          :class="cellClasses[i]"
         >
-          <span :ref="(el) => setStatRef(el as HTMLElement, stat.label)">{{ stat.display }}</span>
+          <img
+            :src="img.src"
+            :alt="img.alt"
+            class="w-full h-full object-cover"
+          />
         </div>
-        <div class="text-gray-500 text-[13px] tracking-[1px] uppercase">{{ stat.label }}</div>
       </div>
     </div>
   </section>
@@ -85,110 +65,66 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const aboutRef = ref<HTMLElement>()
-const aboutLeftRef = ref<HTMLElement>()
-const aboutRightRef = ref<HTMLElement>()
-const aboutLineRef = ref<HTMLElement>()
-const dividerRef = ref<HTMLElement>()
-const statsRowRef = ref<HTMLElement>()
+const textRef = ref<HTMLElement>()
+const lineRef = ref<HTMLElement>()
+const gridRef = ref<HTMLElement>()
 
 const { tm, t, rt } = useI18n()
-const aboutTitleWords = computed(() => (tm('about.titleWords') as string[]).map(w => rt(w)))
-const aboutWordRefs: HTMLElement[] = []
-const statRefs: Record<string, HTMLElement> = {}
+const titleWords = computed(() => (tm('about.titleWords') as string[]).map(w => rt(w)))
 
-function setAboutWordRef(el: HTMLElement | null, i: number) {
-  if (el) aboutWordRefs[i] = el
-}
+const cellClasses = [
+  'col-start-2 col-end-3 row-start-1 row-end-3',
+  'col-start-1 col-end-2 row-start-2 row-end-4',
+  'col-start-1 col-end-2 row-start-4 row-end-6',
+  'col-start-2 col-end-3 row-start-3 row-end-5',
+]
 
-function setStatRef(el: HTMLElement | null, label: string) {
-  if (el) statRefs[label] = el
-}
-
-const stats = computed(() => [
-  { label: t('about.stats.founded'), display: '1958', end: 1958, from: 1940, accent: false, suffix: '' },
-  { label: t('about.stats.airports'), display: '60+', end: 60, from: 0, accent: true, suffix: '+' },
-  { label: t('about.stats.employees'), display: '10K+', end: 10, from: 0, accent: false, suffix: 'K+' },
-  { label: t('about.stats.countries'), display: '6', end: 6, from: 0, accent: true, suffix: '' },
-])
+const galleryImages = [
+  { src: '/images/aviation.jpg', alt: 'Aviation services' },
+  { src: '/images/ramp-services.jpg', alt: 'Ramp services' },
+  { src: '/images/cargo-warehouse.jpg', alt: 'Cargo warehouse' },
+  { src: '/images/meet-and-greet.jpg', alt: 'Meet and greet' },
+]
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger)
 
-  // Left side: label line + title words reveal
-  ScrollTrigger.create({
-    trigger: aboutLeftRef.value,
-    start: 'top 78%',
-    onEnter: () => {
-      gsap.to(aboutLineRef.value!, {
-        width: 40,
-        duration: 0.8,
-        ease: 'power3.out',
-      })
-      gsap.to(aboutLeftRef.value!, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out',
-      })
-    },
-    once: true,
-  })
-
-  // Right side slides in
-  gsap.to(aboutRightRef.value!, {
-    opacity: 1,
-    x: 0,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: aboutRightRef.value,
-      start: 'top 80%',
-    },
-  })
-
-  // Divider draws left to right
-  gsap.to(dividerRef.value!, {
-    scaleX: 1,
-    duration: 1.5,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: dividerRef.value,
-      start: 'top 90%',
-    },
-  })
-
-  // Stats items stagger in
-  const statItems = statsRowRef.value!.querySelectorAll('.stat-item')
-  gsap.to(statItems, {
-    opacity: 1,
-    y: 0,
-    stagger: 0.12,
+  gsap.to(lineRef.value!, {
+    width: 40,
     duration: 0.8,
     ease: 'power3.out',
     scrollTrigger: {
-      trigger: statsRowRef.value,
-      start: 'top 85%',
+      trigger: textRef.value,
+      start: 'top 80%',
+      once: true,
     },
   })
 
-  // Counter animations for each stat
-  stats.value.forEach((stat) => {
-    const el = statRefs[stat.label]
-    if (!el) return
+  gsap.to(textRef.value!, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: textRef.value,
+      start: 'top 80%',
+      once: true,
+    },
+  })
 
-    const obj = { val: stat.from }
-    gsap.to(obj, {
-      val: stat.end,
-      duration: stat.end === 1958 ? 1.5 : 1.8,
+  const cells = gridRef.value!.querySelectorAll('.gallery-cell')
+  cells.forEach((cell, i) => {
+    gsap.set(cell, { filter: 'blur(10px)' })
+    gsap.to(cell, {
+      opacity: 1,
+      filter: 'blur(0px)',
+      duration: 0.8,
+      delay: i * 0.2,
       ease: 'power2.out',
       scrollTrigger: {
-        trigger: statsRowRef.value,
-        start: 'top 85%',
+        trigger: gridRef.value,
+        start: 'top 80%',
         once: true,
-      },
-      onUpdate() {
-        el.textContent = Math.round(obj.val) + stat.suffix
       },
     })
   })

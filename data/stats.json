@@ -13,6 +13,74 @@
       { "value": 126777, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
       { "value": 100706, "suffix": "", "label": "Ton Kargo", "labelEn": "Tons Cargo" },
       { "value": 3634, "suffix": "", "label": "Personel", "labelEn": "Personnel" }
+    ],
+    "airportDetails": [
+      {
+        "name": "İstanbul Havalimanı",
+        "iata": "IST",
+        "sita": "ISTCOXH",
+        "lostFound": "ist.opd01@celebiaviation.com",
+        "operation": "ist.opa01@celebiaviation.com",
+        "telephone": "+90 212 444 0 212",
+        "provinceId": "TR34",
+        "x": 17.6,
+        "y": 17.5
+      },
+      {
+        "name": "Sabiha Gökçen Havalimanı",
+        "iata": "SAW",
+        "sita": "SAWCOXH",
+        "lostFound": "saw.opd01@celebiaviation.com",
+        "operation": "saw.opa01@celebiaviation.com",
+        "telephone": "+90 216 588 80 00",
+        "provinceId": "TR34",
+        "x": 20,
+        "y": 20
+      },
+      {
+        "name": "Esenboğa Havalimanı",
+        "iata": "ESB",
+        "sita": "ESBCOXH",
+        "lostFound": "esb.opd01@celebiaviation.com",
+        "operation": "esb.opa01@celebiaviation.com",
+        "telephone": "+90 312 590 40 00",
+        "provinceId": "TR06",
+        "x": 37.4,
+        "y": 38.6
+      },
+      {
+        "name": "Adnan Menderes Havalimanı",
+        "iata": "ADB",
+        "sita": "ADBCOXH",
+        "lostFound": "adb.opd01@celebiaviation.com",
+        "operation": "adb.opa01@celebiaviation.com",
+        "telephone": "+90 232 274 24 24",
+        "provinceId": "TR35",
+        "x": 12.8,
+        "y": 61.4
+      },
+      {
+        "name": "Antalya Havalimanı",
+        "iata": "AYT",
+        "sita": "AYTCOXH",
+        "lostFound": "ayt.opd01@celebiaviation.com",
+        "operation": "ayt.opa01@celebiaviation.com",
+        "telephone": "+90 242 444 74 23",
+        "provinceId": "TR07",
+        "x": 26.1,
+        "y": 80.9
+      },
+      {
+        "name": "Trabzon Havalimanı",
+        "iata": "TZX",
+        "sita": "TZXCOXH",
+        "lostFound": "tzx.opd01@celebiaviation.com",
+        "operation": "tzx.opa01@celebiaviation.com",
+        "telephone": "+90 462 325 00 00",
+        "provinceId": "TR61",
+        "x": 71.6,
+        "y": 23.9
+      }
     ]
   },
   {
@@ -29,6 +97,52 @@
       { "value": 58000, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
       { "value": 540000, "suffix": "", "label": "Ton Kargo", "labelEn": "Tons Cargo" },
       { "value": 7800, "suffix": "", "label": "Personel", "labelEn": "Personnel" }
+    ],
+    "airportDetails": [
+      {
+        "name": "Indira Gandhi International Airport",
+        "iata": "DEL",
+        "sita": "DELCOXH",
+        "lostFound": "del.opd01@celebiaviation.com",
+        "operation": "del.opa01@celebiaviation.com",
+        "telephone": "+91 11 2567 5126",
+        "provinceId": "INDL",
+        "x": 34.4,
+        "y": 32
+      },
+      {
+        "name": "Chhatrapati Shivaji Maharaj International Airport",
+        "iata": "BOM",
+        "sita": "BOMCOXH",
+        "lostFound": "bom.opd01@celebiaviation.com",
+        "operation": "bom.opa01@celebiaviation.com",
+        "telephone": "+91 22 6685 1010",
+        "provinceId": "INMH",
+        "x": 30.6,
+        "y": 59.8
+      },
+      {
+        "name": "Rajiv Gandhi International Airport",
+        "iata": "HYD",
+        "sita": "HYDCOXH",
+        "lostFound": "hyd.opd01@celebiaviation.com",
+        "operation": "hyd.opa01@celebiaviation.com",
+        "telephone": "+91 40 6546 6370",
+        "provinceId": "INTG",
+        "x": 39.7,
+        "y": 64.2
+      },
+      {
+        "name": "Kempegowda International Airport",
+        "iata": "BLR",
+        "sita": "BLRCOXH",
+        "lostFound": "blr.opd01@celebiaviation.com",
+        "operation": "blr.opa01@celebiaviation.com",
+        "telephone": "+91 80 6678 2253",
+        "provinceId": "INKA",
+        "x": 30.2,
+        "y": 72.8
+      }
     ]
   },
   {
@@ -45,6 +159,52 @@
       { "value": 21000, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
       { "value": 206200, "suffix": "", "label": "Ton Kargo", "labelEn": "Tons Cargo" },
       { "value": 180, "suffix": "", "label": "Personel", "labelEn": "Personnel" }
+    ],
+    "airportDetails": [
+      {
+        "name": "Frankfurt Airport",
+        "iata": "FRA",
+        "sita": "FRACOXH",
+        "lostFound": "fra.opd01@celebiaviation.com",
+        "operation": "fra.opa01@celebiaviation.com",
+        "telephone": "+49 69 690 70000",
+        "provinceId": "DEHE",
+        "x": 41.1,
+        "y": 56.8
+      },
+      {
+        "name": "Munich Airport",
+        "iata": "MUC",
+        "sita": "MUCCOXH",
+        "lostFound": "muc.opd01@celebiaviation.com",
+        "operation": "muc.opa01@celebiaviation.com",
+        "telephone": "+49 89 975 00",
+        "provinceId": "DEBY",
+        "x": 58.8,
+        "y": 79.1
+      },
+      {
+        "name": "Berlin Brandenburg Airport",
+        "iata": "BER",
+        "sita": "BERCOXH",
+        "lostFound": "ber.opd01@celebiaviation.com",
+        "operation": "ber.opa01@celebiaviation.com",
+        "telephone": "+49 30 609 116 00",
+        "provinceId": "DEBE",
+        "x": 71.8,
+        "y": 35.9
+      },
+      {
+        "name": "Hamburg Airport",
+        "iata": "HAM",
+        "sita": "HAMCOXH",
+        "lostFound": "ham.opd01@celebiaviation.com",
+        "operation": "ham.opa01@celebiaviation.com",
+        "telephone": "+49 40 507 50",
+        "provinceId": "DEHH",
+        "x": 47.3,
+        "y": 23.3
+      }
     ]
   },
   {
@@ -61,6 +221,19 @@
       { "value": 24500, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
       { "value": 90000, "suffix": "", "label": "Ton Kargo", "labelEn": "Tons Cargo" },
       { "value": 800, "suffix": "", "label": "Personel", "labelEn": "Personnel" }
+    ],
+    "airportDetails": [
+      {
+        "name": "Budapest Ferenc Liszt International Airport",
+        "iata": "BUD",
+        "sita": "BUDCOXH",
+        "lostFound": "bud.opd01@celebiaviation.com",
+        "operation": "bud.opa01@celebiaviation.com",
+        "telephone": "+36 1 296 7000",
+        "provinceId": "HUBU",
+        "x": 44.9,
+        "y": 40.1
+      }
     ]
   },
   {
@@ -74,6 +247,19 @@
     "mapY": "58.5",
     "stats": [
       { "value": 1, "suffix": "", "label": "İstasyon", "labelEn": "Stations" }
+    ],
+    "airportDetails": [
+      {
+        "name": "Julius Nyerere International Airport",
+        "iata": "DAR",
+        "sita": "DARCOXH",
+        "lostFound": "dar.opd01@celebiaviation.com",
+        "operation": "dar.opa01@celebiaviation.com",
+        "telephone": "+255 22 284 2402",
+        "provinceId": "TZ02",
+        "x": 85,
+        "y": 53.9
+      }
     ]
   },
   {
@@ -90,6 +276,52 @@
       { "value": 39435, "suffix": "", "label": "Uçuş", "labelEn": "Flights" },
       { "value": 1000, "suffix": "+", "label": "Personel", "labelEn": "Personnel" },
       { "value": 40, "suffix": "+", "label": "Müşteri", "labelEn": "Customers" }
+    ],
+    "airportDetails": [
+      {
+        "name": "Soekarno-Hatta International Airport",
+        "iata": "CGK",
+        "sita": "CGKCOXH",
+        "lostFound": "cgk.opd01@celebiaviation.com",
+        "operation": "cgk.opa01@celebiaviation.com",
+        "telephone": "+62 21 5506 7800",
+        "provinceId": "IDJK",
+        "x": 28,
+        "y": 69.8
+      },
+      {
+        "name": "Ngurah Rai International Airport",
+        "iata": "DPS",
+        "sita": "DPSCOXH",
+        "lostFound": "dps.opd01@celebiaviation.com",
+        "operation": "dps.opa01@celebiaviation.com",
+        "telephone": "+62 361 936 3163",
+        "provinceId": "IDBA",
+        "x": 44.5,
+        "y": 81.5
+      },
+      {
+        "name": "Juanda International Airport",
+        "iata": "SUB",
+        "sita": "SUBCOXH",
+        "lostFound": "sub.opd01@celebiaviation.com",
+        "operation": "sub.opa01@celebiaviation.com",
+        "telephone": "+62 31 866 7513",
+        "provinceId": "IDJI",
+        "x": 38.4,
+        "y": 77.4
+      },
+      {
+        "name": "Kualanamu International Airport",
+        "iata": "KNO",
+        "sita": "KNOCOXH",
+        "lostFound": "kno.opd01@celebiaviation.com",
+        "operation": "kno.opa01@celebiaviation.com",
+        "telephone": "+62 61 888 0018",
+        "provinceId": "IDSU",
+        "x": 12.7,
+        "y": 22.8
+      }
     ]
   }
 ]

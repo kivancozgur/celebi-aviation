@@ -1,5 +1,14 @@
 <template>
   <div>
+    <div class="pointer-events-none fixed inset-0 z-[5] grid grid-cols-4 grid-rows-5 place-items-center p-8">
+      <img
+        v-for="logoIndex in watermarkLogos"
+        :key="logoIndex"
+        src="/textoni.png"
+        alt="Textoni watermark"
+        class="h-auto w-[min(16vw,180px)] opacity-10 select-none"
+      />
+    </div>
     <div id="scroll-progress" />
     <NuxtLayout>
       <NuxtPage />
@@ -12,6 +21,8 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+const watermarkLogos = Array.from({ length: 20 }, (_, index) => index)
 
 onMounted(async () => {
   gsap.registerPlugin(ScrollTrigger)
